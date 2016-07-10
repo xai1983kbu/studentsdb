@@ -1,0 +1,24 @@
+/* Global Styles */
+.alert {
+  margin: 10px 0 5px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+#group-select {
+  margin-top: 30px;
+}
+
+#group-select select {
+  height: 30px;
+  border-color: #e89895;
+  width: 80%
+}
+
+/* Footer Styles */
+#footer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
