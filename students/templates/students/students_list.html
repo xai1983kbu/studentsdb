@@ -6,6 +6,22 @@
 
 {% block title %}База Студентів{% endblock title %}
 
+{% block logo %}
+      <div class="col-xs-8">
+        <h1>Сервіс обліку студентів - Меню Студенти</h1>
+      </div>
+{% endblock logo %}
+
+{% block menu_group %}
+      <div class="col-xs-4" id="group-select">
+        <strong>Група</strong>
+        <select>
+          <option value="">Усі студенти </option>
+          <option value="">203, Назаренко </option>
+          <option value="">219, Могилевцев </option>
+        </select>
+      </div>
+{% endblock menu_group %}
 
 {% block content %}
         <a href="{% url "students_add" %}" class="btn btn-primary">Додати студента</a>
@@ -41,7 +57,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li><a href="{% url "students_edit" student.id %}">Редагувати</a></li>
-                      <li><a href="/journal/{{ student.id }}">Відвідування</a></li>
+                      <li><a href="{% url "journal_student" student.id %}">Відвідування</a></li>
                       <li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
                     </ul>
                   </div>                  
@@ -54,27 +70,8 @@
         </table>
         <!-- End Students Listing -->
 
+    {% include "students/pagination.html" %}
 
-        <!-- Start Content Columns -->
-        <nav>
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
 {% endblock content %}
 
 
