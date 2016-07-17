@@ -1,0 +1,62 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Журнал{% endblock meta_title %}
+
+{% block title %}<h2>Облік Відвідування</h2>{% endblock title %}
+
+{% block logo %}
+      <div class="col-xs-8">
+        <h1>Сервіс обліку студентів - Меню Журнал</h1>
+      </div>
+{% endblock logo %}
+
+{% block menu_group %}
+<!-- Скрити меню груп -->
+{% endblock menu_group %}
+
+{% block content %} 
+	
+          <h6 align="center">&larr;Жовтень 2014 &rarr;</h6>
+
+          <!-- Start Students Listing -->
+          <table class="table table-hover table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Студент</th>
+<th>Ср<br/>1</th>  <th>Чт<br/>2</th>  <th>Пт<br/>3</th>  <th>Сб<br/>4</th>  <th>Нд<br/>5</th> <th>Пн<br/>6</th>   <th>Вт<br/>7</th>
+<th>Ср<br/>8</th>  <th>Чт<br/>9</th>  <th>Пт<br/>10</th> <th>Сб<br/>11</th> <th>Нд<br/>12</th> <th>Пн<br/>13</th> <th>Вт<br/>14</th>
+<th>Ср<br/>15</th> <th>Чт<br/>16</th> <th>Пт<br/>17</th> <th>Сб<br/>18</th> <th>Нд<br/>19</th> <th>Пн<br/>20</th> <th>Вт<br/>21</th>
+<th>Ср<br/>22</th> <th>Чт<br/>23</th> <th>Пт<br/>24</th> <th>Сб<br/>25</th> <th>Нд<br/>26</th> <th>Пн<br/>27</th> <th>Вт<br/>28</th>
+<th>Ср<br/>29</th> <th>Чт<br/>30</th> <th>Пт<br/>31</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for student in students %} 
+              <tr>
+                <td>{{forloop.counter}}</td>
+                <td><a href="{% url 'students_edit' student.id %}">{{student.last_name}} <br/>{{student.first_name}}</a></td>
+                   <script>
+     		     var start = 1, end = 31;
+     		     while (start <= end) {
+			document.write('<td><div class="checkbox"><label><input type="checkbox" id="blankCheckbox" value="option1" aria-label="..." ></label></div></td>'); 
+       		       start++}
+		   </script>
+              </tr>
+              {% endfor %}
+            <tbody>
+          </table>
+
+{% endblock content %}
+
+{% block footer %}
+      <div class="col-xs-12">
+	&copy; 2014 Сервіс Обліку Студентів - Меню Журнал
+      </div>
+{% endblock footer %}
+
+
+

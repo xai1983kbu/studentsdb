@@ -6,6 +6,15 @@
 
 {% block title %}Групи{% endblock title %}
 
+{% block logo %}
+      <div class="col-xs-8">
+        <h1>Сервіс обліку студентів - Меню Групи</h1>
+      </div>
+{% endblock logo %}
+
+{% block menu_group %}
+<!-- Скрити меню груп -->
+{% endblock menu_group %}
 
 {% block content %}
         <a href="{% url "students_add" %}" class="btn btn-primary">Додати Групу</a>
@@ -49,21 +58,14 @@
         </table>
         <!-- End Groups Listing -->
 
-
-      <nav>
-        <ul class="pagination">
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li>
-            <a href="#" aria-label="Next">
-              <span aria-hidden="true">Далі</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-
+    {% include "students/pagination.html" %}
 
 {% endblock content %}
+
+{% block footer %}
+      <div class="col-xs-12">
+	&copy; 2014 Сервіс Обліку Студентів - Меню Групи
+      </div>
+{% endblock footer %}
 
 
