@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for studentsdb project.
 
@@ -37,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'students',
+    'students', 
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,3 +125,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PORTAL_URL = 'http://localhost:8000'
+
+
+# Всановлюємо  MEDIA_URL та MEDIA_ROOT як описано на сторінці 219 книги Віталія Подоби
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')

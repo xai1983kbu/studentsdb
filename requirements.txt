@@ -1,0 +1,7 @@
+Django==1.9.7
+Pillow
+#MySQL-python
+
+#I instead use 'MYSQL-python', will be use 'mysqlclient' becauce I use 'python3.4' 
+#http://stackoverflow.com/questions/14087598/python-3-importerror-no-module-named-configparser
+mysqlclient
