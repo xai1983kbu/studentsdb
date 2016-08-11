@@ -36,7 +36,7 @@
 
               <th>
           <a href="{% url 'home' %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}&cadre={{ request.GET.cadre }}&page={{ students.number }}">
-                  Прізвище        
+                  Прізвище
 	      {% if order_by == 'last_name' and reverse == '1' %}
 	          &darr;
 	      {% elif order_by == 'last_name' and reverse != '1' %}
@@ -47,7 +47,7 @@
 
               <th>
           <a href="{% url 'home' %}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}&cadre={{ request.GET.cadre }}&page={{ students.number }}">
-                  Ім'я       
+                  Ім'я
 	      {% if order_by == 'first_name' and reverse == '1' %}
 	          &darr;
 	      {% elif order_by == 'first_name' and reverse != '1' %}
@@ -58,7 +58,7 @@
 
               <th>
             <a href="{% url 'home' %}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}&cadre={{ request.GET.cadre }}&page={{ students.number }}">
-                  № Білету        
+                  № Білету
 	      {% if order_by == 'ticket' and reverse == '1' %}
 	          &darr;
 	      {% elif order_by == 'ticket' and reverse != '1' %}
@@ -78,21 +78,21 @@
             {% for student in students  %}
             <tr>
               <td>{{ student.id }}</td>
-              
+
               <td>
                 {% if student.photo %}
                 <img src="{{ student.photo.url }}" alt="..." class="img-circle" height="30" width="30"/>
                 {% elif not student.photo %}
-                <img src="{% static 'img/no_photo.jpg' %}" alt="..." class="img-circle" height="30" width="30"/> 
+                <img src="{% static 'img/no_photo.jpg' %}" alt="..." class="img-circle" height="30" width="30"/>
                 {% endif %}
               </td>
-                
+
               <td><a href="{% url "students_edit" student.id %}">{{ student.last_name }}</a></td>
               <td><a href="{% url "students_edit" student.id %}">{{ student.first_name }}</a></td>
               <td>{{ student.ticket }}</td>
               <td>
                   <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       Дія
                       <span class="caret"></span>
@@ -102,7 +102,7 @@
                       <li><a href="{% url "journal_student" student.id %}">Відвідування</a></li>
                       <li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
                     </ul>
-                  </div>                  
+                  </div>
               </td>
             </tr>
             {% endfor %}
@@ -112,8 +112,6 @@
         </table>
         <!-- End Students Listing -->
 
-    {% include "students/pagination.html" %}
+    {% include "students/pagination_students.html" %}
 
 {% endblock content %}
-
-

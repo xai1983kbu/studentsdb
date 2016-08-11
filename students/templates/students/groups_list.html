@@ -20,12 +20,13 @@
         <a href="{% url "students_add" %}" class="btn btn-primary">Додати Групу</a>
 
         <!-- Start Groups Listing -->
+        {% with order_by=request.GET.order_by  reverse=request.GET.reverse  page=request.GET.page %}
         <table class="table table-hover table-striped">
           <thead>
             <tr>
               <th>#</th>
-              <th>Назва&uarr;</th>
-              <th>Староста</th>
+              <th><a href="{% url "groups" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&reverse=1{% endif %}&page={{groups.number}}">Назва{% if order_by == 'title' %}{% if reverse == '1' %} &darr;{% else %} &uarr;{% endif %}{% endif %}</a></th>
+              <th><a href="{% url "groups" %}?order_by=leader{% if order_by == 'leader' and reverse != '1' %}&reverse=1{% endif %}&page={{groups.number}}">Староста{% if order_by == 'leader' %}{% if reverse == '1' %} &darr;{% else %} &uarr;{% endif %}{% endif %}</a></th>
               <th>Дії</th>
             </tr>
           </thead>
@@ -33,12 +34,12 @@
           <tbody>
             {% for group in groups  %}
             <tr>
-              <td>{{ forloop.counter }}</td>
-              <td><a href="{% url "groups_edit" group.id %}">{{ group.name }}</a></td>
-              <td><a href="{% url "groups_edit" group.id %}">{{ group.leader }}</a></td>
+              <td>{{ group.id }}</td>
+              <td><a href="{% url "groups_edit" group.id %}">{{ group.title }}</a></td>
+              <td><a href="{% url "groups_edit" group.id %}">{% if group.leader %}{{ group.leader }}{% else %}Старосту не назначо{% endif %}</a></td>
               <td>
                   <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       Дія
                       <span class="caret"></span>
@@ -48,7 +49,7 @@
                       <li><a href="/journal/{{ group.id }}">Відвідування</a></li>
                       <li><a href="{% url "groups_delete" group.id %}">Видалити</a></li>
                     </ul>
-                  </div>                  
+                  </div>
               </td>
             </tr>
             {% endfor %}
@@ -56,9 +57,10 @@
 
           </tbody>
         </table>
+        {% endwith %}
         <!-- End Groups Listing -->
 
-    {% include "students/pagination.html" %}
+    {% include "students/pagination_groups.html" %}
 
 {% endblock content %}
 
@@ -67,5 +69,3 @@
 	&copy; 2014 Сервіс Обліку Студентів - Меню Групи
       </div>
 {% endblock footer %}
-
-

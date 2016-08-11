@@ -1,0 +1,40 @@
+{% with order_by=request.GET.order_by  reverse=request.GET.reverse  cadre=request.GET.cadre page=request.GET.page  %}
+{% if students.has_other_pages or cadres_set.has_other_pages %}
+<nav>
+ <ul class="pagination">
+    <li>
+      <a href="{% url 'home' %}?order_by={{ order_by }}{% if reverse %}&reverse={{ reverse }}{% endif %}&cadre=1&page=1" aria-label="Previous">
+        <span aria-hidden="true">first</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'home' %}?order_by={{ order_by }}{% if reverse %}&reverse={{ reverse }}{% endif %}&cadre={% if cadres_set.has_previous %}{{ cadres_set.previous_page_number }} {%elif cadres_set.number == 1%} {{1}}{% endif %}&page=1" aria-label="Previous">
+        <span aria-hidden="true">Previous</span>
+      </a>
+    </li>
+
+    {% for p in combined_page_rage %}
+    <li {% if students.number == p.num_in_cadre %} class="active" {% endif %}>
+      <a href="{% url "home" %}?order_by={{ order_by }}{% if reverse %}&reverse={{ reverse }}{% endif %}&cadre={{ cadre }}&page={{ p.num_in_cadre }}">
+            {{p.num_in_document}}
+      </a>
+    </li>
+    {% endfor %}
+
+    <li>
+      <a href="{% url "home" %}?order_by={{ order_by }}{% if reverse %}&reverse={{ reverse }}{% endif %}&cadre={% if cadres_set.has_next %}{{ cadres_set.next_page_number }}{% else %}{{cadre}}{% endif %}&page=1" aria-label="Next">
+        <span aria-hidden="true">Next</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url "home" %}?order_by={{ order_by }}{% if reverse %}&reverse={{ reverse }}{% endif %}&cadre={{ cadres_set.paginator.num_pages }}&page={{ students.paginator.num_pages }}" aria-label="Next">
+        <span aria-hidden="true">last</span>
+      </a>
+    </li>
+ </ul>
+</nav>
+
+
+{% endif %}
+{% endwith %}
