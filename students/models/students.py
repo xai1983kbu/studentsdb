@@ -50,6 +50,10 @@ class Student(models.Model):
         blank = True,
         verbose_name = "Додаткові нотатки")
 
+    lectures = models.ManyToManyField('Lecture', db_table=u'students_lecture_present_students',
+       verbose_name=u'Відвідувані заннятя')
+
+
     def  __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
 

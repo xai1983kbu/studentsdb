@@ -17,6 +17,7 @@ urlpatterns = [
 
     # Journal urls
     url(r'^journal/$','students.views.journal.journal', name='journal'),
+    url(r'^journal/(?P<year>[0-9]+)/(?P<month>[0-9]+)/?$','students.views.journal.journal', name='journal_year_month'),
     url(r'^journal/(?P<sid>[0-9]+)/?$','students.views.journal.journal_student', name='journal_student'),
 
     url(r'^admin/', admin.site.urls),
