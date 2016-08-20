@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-
+from students.models.groups import Group
 class Student(models.Model):
     """Student Model"""
 
@@ -55,6 +55,7 @@ class Student(models.Model):
 
 
     def  __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        group = Group.objects.get(student=self)
+        return "%s %s  (Група %s)" % (self.first_name, self.last_name, group.title)
 
 

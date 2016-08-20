@@ -17,31 +17,69 @@
 {% endblock menu_group %}
 
 {% block content %}
-{% block menu_schoolyears %}
-      <div class="col-xs-4" id="schoolyears-select">
-        <strong>Навчальний рік</strong>
-        <select>
-        {% for schoolyear in list_schoolyears %}
-        <option value="">{{schoolyear.title}} </option>
-        {% endfor %}
-        </select>
-      </div>
-{% endblock menu_schoolyears %} 
+<script>
+function myFunction() {
+    var x = document.getElementById("schoolyears-select").value;
+        y = document.getElementById("subject-select").value;
+        z = document.getElementById("group-select-journal").value;
+/* alert(x);
+alert(y);
+alert(z); */
+$.ajax({
+    type: "POST",
+    url: "http://127.0.0.1:8000/ajax_post",
+    data: { csrfmiddlewaretoken: "{{ csrf_token }}",
+            schoolyear_id:x,
+            subject_id:y,
+            group_id:z,
+          },
+    success: success
+})
+}
 
-{% block menu_subjects %}
-      <div class="col-xs-4" id="schoolyears-select">
-        <strong>Назва предмету</strong>
-        <select>
-        {% for subject in list_subjects %}
-        <option value="">{{subject.title}} </option>
+function success(data) {
+url = "http://127.0.0.1:8000"+data.url
+/*alert(url);*/
+window.location.replace(url);
+}
+</script>
+{% with year_id=request.GET.year  subject_id=request.GET.subject   group_id=request.GET.group  %}
+{% block menu_schoolyears %}
+      <div class="col-xs-4" >
+        <strong>Навчальний рік</strong>
+        <select  id="schoolyears-select" onchange="myFunction()">
+        {% for schoolyear in list_schoolyears %}
+        <option value="{{schoolyear.id}}" {% if schoolyear.id == year_id|add:0 %} selected {% endif %}>{{schoolyear.title}} </option>
         {% endfor %}
         </select>
       </div>
-{% endblock menu_subjects %} 
+
+{% endblock menu_schoolyears %}
+{% block menu_subjects %}
+      <div class="col-xs-4" >
+        <strong>Назва предмету</strong>
+        <select id="subject-select"  onchange="myFunction()">
+        {% for subject in list_subjects %}
+        <option value="{{subject.id}}"{% if subject.id == subject_id|add:0 %} selected {% endif %}>{{subject.title}} </option>
+        {% endfor %}
+        </select>
+      </div>
+{% endblock menu_subjects %}
+{% block menu_groups %}
+      <div class="col-xs-4" >
+        <strong>Назва групи</strong>
+        <select id="group-select-journal"  onchange="myFunction()">
+        {% for group in list_groups %}
+        <option value="{{group.id}}"{% if group.id == group_id|add:0 %} selected {% endif %}>{{group.title}} </option>
+        {% endfor %}
+        </select>
+      </div>
+{% endblock menu_groups %}
+{% endwith %}
       <div class="col-xs-12" id="list_months">
 {% include "students/pagination_journal.html" %}
       </div>
-      <div class="col-xs-12" id="table">	
+      <div class="col-xs-12" id="table">
         <h6 align="center">&larr;{{ school_month_year|date:"F Y" }}&rarr;  <br>&larr;{{schoolyear_title}} навчального року &rarr;</h6>
 
           <!-- Start Students Listing -->
@@ -60,14 +98,14 @@
               {% load index %}
               {% load getattr %}
 
-              {% for student in students %} 
+              {% for student in students %}
               <tr>
                 <td>{{forloop.counter}}</td>
                 <td><a href="{% url 'students_edit' student.id %}">{{student.last_name}} <br/>{{student.first_name}}</a></td>
                   {% for day in list_days %}
                   <td>
                     <div class="checkbox" >
-                      <label><input type="checkbox" 
+                      <label><input type="checkbox"
                       {% for lects in lects_subj_student|index:forloop.parentloop.counter0 %}
 
                           {% if day|date == lects|getattr:"date,"|date %}  checked {% endif %}
@@ -91,6 +129,3 @@
 	&copy; 2014 Сервіс Обліку Студентів - Меню Журнал
       </div>
 {% endblock footer %}
-
-
-

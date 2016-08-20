@@ -53,9 +53,9 @@
         {% url 'journal' as url2 %}
         {% url 'groups' as url3 %}
 
-          <li role="presentation" {% if request.path == url1 %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
-          <li role="presentation" {% if request.path == url2 %} class="active" {% endif %}><a href="{% url "journal" %}">Відвідування</a></li>
-          <li role="presentation" {% if request.path == url3 %} class="active" {% endif %}><a href="{% url "groups" %}">Групи</a></li>
+          <li role="presentation" {% if url1 == request.path  %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
+          <li role="presentation" {% if url2 in request.path  %} class="active" {% endif %}><a href="{% url "journal" %}">Відвідування</a></li>
+          <li role="presentation" {% if url3 in request.path  %} class="active" {% endif %}><a href="{% url "groups" %}">Групи</a></li>
         </ul>
       </div>
     </div>
