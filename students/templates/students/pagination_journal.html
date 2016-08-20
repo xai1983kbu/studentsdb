@@ -1,0 +1,13 @@
+{% with year_id=request.GET.year  subject_id=request.GET.subject   group_id=request.GET.group x=request.GET.x %}
+<nav>
+    <ul class="pagination">
+    {% for month in list_months %}
+    <li class={% if month == school_month_year %}"active" {% endif %}>
+       <a href="{% url 'journal_year_month' month|date:"Y" month|date:"m" %}/?year={% if year_id %}{{ year_id }}{% else %}1{% endif %}&subject={% if subject_id %}{{ subject_id }}{% else %}1{% endif %}&group={% if group_id %}{{ group_id }}{% else %}1{% endif %}">
+          {{ month|date:"b Y" }}
+       </a>
+    </li>
+    {% endfor %}
+    </ul>
+</nav>
+{% endwith %}
