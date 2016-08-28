@@ -27,28 +27,24 @@ def journal(request, year='2014', month='09'):
         month = SchoolYear.objects.get(id=1).start_year_date.month
 
 
-    school_month_year = datetime(int(year),int(month),1)
-    ###print(school_month_year)
 
     list_subjects = Subject.objects.all()           # Список предметів
     list_schoolyears = SchoolYear.objects.all()     # Список навчальних років
     list_groups = Group.objects.all()               # Список навчальних груп
-    year_id=request.GET.get('year','1')
+    year_id=request.GET.get('year','1')             # Зчитую "year_id" з  GET запиту
     schoolyear = SchoolYear.objects.get(id=year_id) # Навчальний рік з id=year_id
-    #schoolyear = SchoolYear.objects.get(start_year_date=school_month_year) # Навчальний рік який починається з дати school_month_year
     schoolyear_title = schoolyear.title             # Назва навчального року
     start_year_date = schoolyear.start_year_date    # Дата початку навчального року
     end_year_date = schoolyear.end_year_date        # Дата закінчення навчального року
     # Список місяців навчального року
     list_months = list(rrule(MONTHLY, dtstart = start_year_date, until = end_year_date))
     # Створюю місяць який відповідає 'year' та 'month'
-    school_month_year = datetime(int(year),int(month),1)  # Треба додати обробник
+    school_month_year = datetime(int(year),int(month),1)  # Дата яка відповідає року "year" та місяцю "month"
     # Список календарних днів у вибраному місяці року
     list_days = list(rrule(DAILY, dtstart = school_month_year, until = school_month_year+relativedelta(months=+1, days=-1)))
 
-    #students = Student.objects.all() #список всіх студентів
     group_id=request.GET.get('group','1')
-    students = Student.objects.filter(student_group_id=group_id) #список всіх студентів з групи з id=group_id
+    students = Student.objects.filter(student_group_id=group_id) #список усіх студентів з групи з id=group_id
     subject_id = request.GET.get('subject','1')
     lects_subj_student=[]
     for student in students:

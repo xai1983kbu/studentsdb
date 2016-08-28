@@ -15,7 +15,7 @@
            crossorigin="anonymous">
      <link rel="stylesheet"
            href="{{ PORTAL_URL }}{% static "css/main.css" %}">
-           
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>           
      {% block extra_css %}{% endblock extra_css %}   
 </head>
 <body>
@@ -52,10 +52,18 @@
         {% url 'home' as url1 %}
         {% url 'journal' as url2 %}
         {% url 'groups' as url3 %}
+        {% url 'exams' as url4 %}
+        {% url 'results' as url5 %}
+        {% url 'students_load_more' as url6 %}
+        {% url 'students_scroll' as url7 %}
 
           <li role="presentation" {% if url1 == request.path  %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
+          <li role="presentation" {% if url6 in request.path  %} class="active" {% endif %}><a href="{% url "students_load_more" %}">Студенти L M</a></li>
+          <li role="presentation" {% if url7 in request.path  %} class="active" {% endif %}><a href="{% url "students_scroll" %}">Студенти Scroll</a></li>
           <li role="presentation" {% if url2 in request.path  %} class="active" {% endif %}><a href="{% url "journal" %}">Відвідування</a></li>
           <li role="presentation" {% if url3 in request.path  %} class="active" {% endif %}><a href="{% url "groups" %}">Групи</a></li>
+          <li role="presentation" {% if url4 in request.path  %} class="active" {% endif %}><a href="{% url "exams" %}">Екзамени</a></li>
+          <li role="presentation" {% if url5 in request.path  %} class="active" {% endif %}><a href="{% url "results" %}">Оцінки</a></li>
         </ul>
       </div>
     </div>
@@ -94,7 +102,7 @@
   <!-- End Container--> 
    
     <!-- Javascript Inclusion -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
             crossorigin="anonymous"></script>
