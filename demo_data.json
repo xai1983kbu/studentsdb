@@ -88,11 +88,27 @@
     }
 },
 {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "students",
+        "model": "exam"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "students",
+        "model": "teacher"
+    }
+},
+{
     "model": "sessions.session",
     "pk": "ehcbot3fgqxamkkxruxckz2jljjtb1je",
     "fields": {
         "session_data": "NTEzMzk0ZDNkNGE5NTNjNjYwOWFjZGI0Y2IzZDgwNmQwNDUxYzk0ZTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZDE0Mjc4MGIzNTUzMThiZDk1ODk4NzQ3NWI0N2I1NGRmNzhmNzE5NiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
-        "expire_date": "2016-08-31T15:36:08Z"
+        "expire_date": "2016-08-31T15:36:08"
     }
 },
 {
@@ -100,7 +116,43 @@
     "pk": "n6j7dvh5n0qqhfnufwy21kipqoxgjb07",
     "fields": {
         "session_data": "MDhiMDc0NGE5NzZhMmI4ZWU1MmFiMDk5Yjc3NjQ4Yjk3MTJkZTU5Nzp7Il9hdXRoX3VzZXJfaGFzaCI6IjQ2YjQyMDkyM2I5MDY2ODJiZWU2N2NlYzYzOTAwZDI3MDA4MmZhNzQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
-        "expire_date": "2016-08-07T19:21:19Z"
+        "expire_date": "2016-08-07T19:21:19"
+    }
+},
+{
+    "model": "students.group",
+    "pk": 1,
+    "fields": {
+        "title": "509",
+        "leader": null,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 2,
+    "fields": {
+        "title": "406",
+        "leader": 16,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 3,
+    "fields": {
+        "title": "426",
+        "leader": 8,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 5,
+    "fields": {
+        "title": "422",
+        "leader": 2,
+        "notes": ""
     }
 },
 {
@@ -110,9 +162,9 @@
         "first_name": "\u0410\u043d\u0434\u0440\u0456\u04392",
         "last_name": "\u0421\u043e\u0440\u043e\u0447\u0430\u043d2",
         "middle_name": "\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u04472",
-        "student_group": null,
-        "birthday": "2016-07-24",
-        "photo": "./my_photo2_uQn3Hxb.jpg",
+        "student_group": 5,
+        "birthday": "2016-09-24",
+        "photo": "",
         "ticket": "1232",
         "notes": "",
         "lectures": [
@@ -127,7 +179,7 @@
         "first_name": "\u0410\u043d\u0434\u0440\u0456\u0439",
         "last_name": "\u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "middle_name": "\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u0447",
-        "student_group": null,
+        "student_group": 5,
         "birthday": "2016-07-24",
         "photo": "./my_photo_DYN9qg2.jpg",
         "ticket": "123",
@@ -135,7 +187,8 @@
         "lectures": [
             2,
             5,
-            7
+            7,
+            8
         ]
     }
 },
@@ -146,9 +199,9 @@
         "first_name": "\u0410\u041d\u0414\u0420\u0406\u0419",
         "last_name": "\u0421\u041e\u0420\u041e\u0427\u0410\u041d",
         "middle_name": "\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u04473",
-        "student_group": null,
+        "student_group": 3,
         "birthday": "2016-07-24",
-        "photo": "./my_photo3_zpE6vit_lWWN1cs.jpg",
+        "photo": "",
         "ticket": "1233",
         "notes": "",
         "lectures": [
@@ -164,9 +217,9 @@
         "first_name": "\u0410\u043d\u0434\u0440\u0456\u04394",
         "last_name": "Sorochan4",
         "middle_name": "",
-        "student_group": null,
+        "student_group": 2,
         "birthday": null,
-        "photo": "./my_photo3_zpE6vit.jpg",
+        "photo": "",
         "ticket": "75",
         "notes": "",
         "lectures": [
@@ -190,7 +243,8 @@
         "ticket": "65",
         "notes": "",
         "lectures": [
-            6
+            6,
+            8
         ]
     }
 },
@@ -201,9 +255,9 @@
         "first_name": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439",
         "last_name": "\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "middle_name": "\u042f\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u0447",
-        "student_group": null,
-        "birthday": "2016-08-09",
-        "photo": "./no_photo.jpg",
+        "student_group": 2,
+        "birthday": "2016-10-09",
+        "photo": "",
         "ticket": "999",
         "notes": "",
         "lectures": [
@@ -221,9 +275,9 @@
         "first_name": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439",
         "last_name": "\u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "middle_name": "\u0410\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u0447",
-        "student_group": null,
+        "student_group": 5,
         "birthday": "2016-08-15",
-        "photo": "./no_photo_eKqh9rN.jpg",
+        "photo": "",
         "ticket": "1111",
         "notes": "",
         "lectures": [
@@ -239,7 +293,7 @@
         "first_name": "\u0421\u0435\u0440\u0433\u0456\u0439",
         "last_name": "\u0412\u0430\u043d\u0456\u043d",
         "middle_name": "\u041c\u0438\u0435\u043e\u043b\u0430\u0439\u043e\u0432\u0438\u0447",
-        "student_group": null,
+        "student_group": 5,
         "birthday": "2016-08-01",
         "photo": "./no_photo_jR3jAJN.jpg",
         "ticket": "555",
@@ -248,7 +302,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
         ]
     }
 },
@@ -259,12 +314,18 @@
         "first_name": "Alex",
         "last_name": "Antoni",
         "middle_name": "Gi",
-        "student_group": null,
-        "birthday": "2016-08-22",
-        "photo": "./no_photo_ux8eXC7.jpg",
+        "student_group": 3,
+        "birthday": "2016-09-22",
+        "photo": "",
         "ticket": "33",
         "notes": "",
-        "lectures": []
+        "lectures": [
+            8,
+            2,
+            3,
+            5,
+            6
+        ]
     }
 },
 {
@@ -276,7 +337,7 @@
         "middle_name": "Rozumna",
         "student_group": 1,
         "birthday": "2016-08-14",
-        "photo": "./no_photo_iQb8rn7.jpg",
+        "photo": "",
         "ticket": "1111",
         "notes": "",
         "lectures": [
@@ -294,10 +355,15 @@
         "middle_name": "Song",
         "student_group": 1,
         "birthday": "2016-08-21",
-        "photo": "./no_photo_TOHvpzV.jpg",
+        "photo": "",
         "ticket": "234",
         "notes": "",
-        "lectures": []
+        "lectures": [
+            8,
+            2,
+            4,
+            6
+        ]
     }
 },
 {
@@ -309,13 +375,14 @@
         "middle_name": "Sun",
         "student_group": 2,
         "birthday": "2016-09-08",
-        "photo": "./no_photo_9UuJqeu.jpg",
+        "photo": "./tumblr_nisz4gBqia1rl53x2o2_400_SaOvCPG.png",
         "ticket": "12",
         "notes": "",
         "lectures": [
-            4,
             2,
-            5
+            4,
+            5,
+            8
         ]
     }
 },
@@ -326,12 +393,17 @@
         "first_name": "Nebo",
         "last_name": "Sune",
         "middle_name": "Zemla",
-        "student_group": null,
-        "birthday": "2016-08-23",
-        "photo": "./no_photo_KzxjR8y.jpg",
+        "student_group": 2,
+        "birthday": "2016-09-23",
+        "photo": "./lucy_hale_png__1__by_bayanfly-d97c6lr_WOOztSA.png",
         "ticket": "1",
         "notes": "",
-        "lectures": []
+        "lectures": [
+            8,
+            3,
+            5,
+            6
+        ]
     }
 },
 {
@@ -342,12 +414,17 @@
         "last_name": "Dewis",
         "middle_name": "",
         "student_group": 3,
-        "birthday": null,
-        "photo": "",
+        "birthday": "2016-09-15",
+        "photo": "./tumblr_mz75gxtnin1rshr5to1_500_yQf6JjP.png",
         "ticket": "3",
         "notes": "",
         "lectures": [
-            5
+            5,
+            8,
+            2,
+            3,
+            4,
+            6
         ]
     }
 },
@@ -355,66 +432,96 @@
     "model": "students.student",
     "pk": 18,
     "fields": {
-        "first_name": "\u041f\u0435\u0440\u0448\u0438\u0439 \u0432 MTV2",
-        "last_name": "\u041f\u0440. \u041f\u0435\u0440\u0448\u043e\u0433\u043e",
+        "first_name": "\u0404\u0432\u0433\u0435\u043d",
+        "last_name": "\u041f\u0435\u0440\u043a\u0456\u043d",
         "middle_name": "",
         "student_group": 2,
-        "birthday": null,
+        "birthday": "2016-11-16",
         "photo": "",
         "ticket": "1",
         "notes": "",
-        "lectures": []
+        "lectures": [
+            8,
+            3,
+            5
+        ]
     }
 },
 {
     "model": "students.student",
     "pk": 19,
     "fields": {
-        "first_name": "\u0414\u0440\u0443\u0433\u0438\u0439 \u0432 MTV2",
-        "last_name": "\u0414\u0440. \u041f\u0435\u0440\u0448\u043e\u0433\u043e",
+        "first_name": "\u0416\u0430\u043d",
+        "last_name": "\u0411\u0430\u043b\u0430\u043d",
         "middle_name": "",
         "student_group": 3,
-        "birthday": null,
+        "birthday": "2016-11-28",
         "photo": "",
         "ticket": "1",
         "notes": "",
-        "lectures": []
+        "lectures": [
+            2,
+            4,
+            7
+        ]
     }
 },
 {
-    "model": "students.group",
-    "pk": 1,
+    "model": "students.student",
+    "pk": 20,
     "fields": {
-        "title": "MTV",
-        "leader": null,
-        "notes": ""
+        "first_name": "\u0406\u0432\u0430\u043d",
+        "last_name": "\u0424\u0440\u0430\u043d\u043a\u043e",
+        "middle_name": "\u042f\u043a\u043e\u0432\u0438\u0447",
+        "student_group": 1,
+        "birthday": "2016-09-28",
+        "photo": "",
+        "ticket": "234",
+        "notes": "",
+        "lectures": [
+            5,
+            2,
+            3,
+            4
+        ]
     }
 },
 {
-    "model": "students.group",
-    "pk": 2,
+    "model": "students.student",
+    "pk": 21,
     "fields": {
-        "title": "MTV2",
-        "leader": 16,
-        "notes": ""
+        "first_name": "\u041f\u0435\u0442\u0440",
+        "last_name": "\u0421\u043a\u0440\u0438\u043f\u0456\u043d",
+        "middle_name": "",
+        "student_group": 3,
+        "birthday": "2016-08-28",
+        "photo": "",
+        "ticket": "234",
+        "notes": "",
+        "lectures": [
+            2,
+            4,
+            5
+        ]
     }
 },
 {
-    "model": "students.group",
-    "pk": 3,
+    "model": "students.student",
+    "pk": 22,
     "fields": {
-        "title": "MTV2",
-        "leader": 8,
-        "notes": ""
-    }
-},
-{
-    "model": "students.group",
-    "pk": 5,
-    "fields": {
-        "title": "MTV2",
-        "leader": 2,
-        "notes": ""
+        "first_name": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430",
+        "last_name": "\u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e",
+        "middle_name": "",
+        "student_group": 3,
+        "birthday": "2016-10-28",
+        "photo": "./tumblr_mdf2tydPTM1rhe4w0o1_500_1BvanvW.png",
+        "ticket": "33",
+        "notes": "",
+        "lectures": [
+            4,
+            5,
+            6
+        ]
     }
 },
 {
@@ -460,7 +567,13 @@
             3,
             6,
             8,
-            14
+            14,
+            19,
+            13,
+            11,
+            21,
+            16,
+            20
         ]
     }
 },
@@ -476,7 +589,12 @@
         "present_students": [
             2,
             5,
-            8
+            8,
+            15,
+            11,
+            16,
+            20,
+            18
         ]
     }
 },
@@ -494,7 +612,13 @@
             9,
             10,
             12,
-            14
+            14,
+            19,
+            13,
+            21,
+            22,
+            16,
+            20
         ]
     }
 },
@@ -514,7 +638,13 @@
             10,
             12,
             14,
-            16
+            16,
+            15,
+            11,
+            20,
+            21,
+            22,
+            18
         ]
     }
 },
@@ -531,7 +661,12 @@
             5,
             7,
             9,
-            10
+            10,
+            15,
+            13,
+            11,
+            22,
+            16
         ]
     }
 },
@@ -548,7 +683,30 @@
             3,
             6,
             8,
-            10
+            10,
+            19
+        ]
+    }
+},
+{
+    "model": "students.lecture",
+    "pk": 8,
+    "fields": {
+        "year": 1,
+        "date": "2014-09-09",
+        "title": 2,
+        "group": 3,
+        "notes": "",
+        "present_students": [
+            10,
+            3,
+            18,
+            14,
+            7,
+            15,
+            13,
+            11,
+            16
         ]
     }
 },
@@ -568,6 +726,133 @@
         "title": "\u0425\u0456\u043c\u0456\u044f",
         "date": "2016-08-26",
         "notes": ""
+    }
+},
+{
+    "model": "students.subject",
+    "pk": 3,
+    "fields": {
+        "title": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430",
+        "date": "2017-05-25",
+        "notes": ""
+    }
+},
+{
+    "model": "students.subject",
+    "pk": 4,
+    "fields": {
+        "title": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e",
+        "date": "2017-05-23",
+        "notes": ""
+    }
+},
+{
+    "model": "students.subject",
+    "pk": 5,
+    "fields": {
+        "title": "\u0424\u0456\u043b\u043e\u0441\u043e\u0444\u0456\u044f",
+        "date": "2017-05-17",
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 1,
+    "fields": {
+        "title": 1,
+        "date_time": "2017-05-24T12:00:00",
+        "tea\u0441her": 2,
+        "group": 2
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 2,
+    "fields": {
+        "title": 2,
+        "date_time": "2017-05-30T13:00:00",
+        "tea\u0441her": 4,
+        "group": 1
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 3,
+    "fields": {
+        "title": 3,
+        "date_time": "2016-08-21T10:48:23",
+        "tea\u0441her": 3,
+        "group": 5
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 4,
+    "fields": {
+        "title": 4,
+        "date_time": "2016-08-21T10:48:40",
+        "tea\u0441her": 3,
+        "group": 1
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 5,
+    "fields": {
+        "title": 5,
+        "date_time": "2016-08-21T10:48:50",
+        "tea\u0441her": 4,
+        "group": 5
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 6,
+    "fields": {
+        "title": 3,
+        "date_time": "2016-08-21T10:49:05",
+        "tea\u0441her": 2,
+        "group": 3
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 7,
+    "fields": {
+        "title": 4,
+        "date_time": "2016-08-21T10:49:14",
+        "tea\u0441her": 2,
+        "group": 2
+    }
+},
+{
+    "model": "students.teacher",
+    "pk": 2,
+    "fields": {
+        "first_name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432",
+        "last_name": "\u041a\u043e\u0436\u0435\u0432\u0438\u0439",
+        "middle_name": "\u041f\u0435\u0442\u0440\u043e\u0432\u0438\u0447",
+        "salary": 7000
+    }
+},
+{
+    "model": "students.teacher",
+    "pk": 3,
+    "fields": {
+        "first_name": "\u041c\u0430\u0440\u0456\u044f",
+        "last_name": "\u041f\u0440\u0438\u0449\u0435\u043f\u043a\u0456\u043d\u0430",
+        "middle_name": "\u0406\u0432\u0430\u043d\u0456\u0432\u043d\u0430",
+        "salary": 6800
+    }
+},
+{
+    "model": "students.teacher",
+    "pk": 4,
+    "fields": {
+        "first_name": "\u0410\u043d\u0434\u0440\u0456\u0439",
+        "last_name": "\u0420\u0435\u043d\u043a\u0456\u043d",
+        "middle_name": "\u0412\u0430\u0441\u0438\u043b\u044c\u043e\u0432\u0438\u0447",
+        "salary": 7900
     }
 },
 {
@@ -868,11 +1153,65 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can add \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
+        "content_type": 12,
+        "codename": "add_exam"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can change \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
+        "content_type": 12,
+        "codename": "change_exam"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can delete \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
+        "content_type": 12,
+        "codename": "delete_exam"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
+        "content_type": 13,
+        "codename": "add_teacher"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
+        "content_type": 13,
+        "codename": "change_teacher"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
+        "content_type": 13,
+        "codename": "delete_teacher"
+    }
+},
+{
     "model": "auth.user",
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$24000$651RvcbtujFC$foROaHeKtLOwNvFT5IC+Yz/mWhzdrDjB7JxX0EBqkWk=",
-        "last_login": "2016-08-17T15:36:08Z",
+        "last_login": "2016-08-17T15:36:08",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -880,7 +1219,7 @@
         "email": "xai_kbu@ukr.net",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2016-07-24T19:20:12Z",
+        "date_joined": "2016-07-24T19:20:12",
         "groups": [],
         "user_permissions": []
     }
@@ -889,7 +1228,7 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2016-07-26T18:11:21Z",
+        "action_time": "2016-07-26T18:11:21",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -902,7 +1241,7 @@
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
-        "action_time": "2016-07-26T18:11:24Z",
+        "action_time": "2016-07-26T18:11:24",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -915,7 +1254,7 @@
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
-        "action_time": "2016-07-26T18:11:31Z",
+        "action_time": "2016-07-26T18:11:31",
         "user": 1,
         "content_type": 7,
         "object_id": "5",
@@ -928,7 +1267,7 @@
     "model": "admin.logentry",
     "pk": 4,
     "fields": {
-        "action_time": "2016-07-26T18:11:54Z",
+        "action_time": "2016-07-26T18:11:54",
         "user": 1,
         "content_type": 7,
         "object_id": "6",
@@ -941,7 +1280,7 @@
     "model": "admin.logentry",
     "pk": 5,
     "fields": {
-        "action_time": "2016-07-26T19:59:05Z",
+        "action_time": "2016-07-26T19:59:05",
         "user": 1,
         "content_type": 7,
         "object_id": "2",
@@ -954,7 +1293,7 @@
     "model": "admin.logentry",
     "pk": 6,
     "fields": {
-        "action_time": "2016-07-26T20:09:19Z",
+        "action_time": "2016-07-26T20:09:19",
         "user": 1,
         "content_type": 7,
         "object_id": "5",
@@ -967,7 +1306,7 @@
     "model": "admin.logentry",
     "pk": 7,
     "fields": {
-        "action_time": "2016-07-26T20:09:26Z",
+        "action_time": "2016-07-26T20:09:26",
         "user": 1,
         "content_type": 7,
         "object_id": "6",
@@ -980,7 +1319,7 @@
     "model": "admin.logentry",
     "pk": 8,
     "fields": {
-        "action_time": "2016-07-26T20:09:40Z",
+        "action_time": "2016-07-26T20:09:40",
         "user": 1,
         "content_type": 7,
         "object_id": "3",
@@ -993,7 +1332,7 @@
     "model": "admin.logentry",
     "pk": 9,
     "fields": {
-        "action_time": "2016-07-26T20:09:53Z",
+        "action_time": "2016-07-26T20:09:53",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -1006,7 +1345,7 @@
     "model": "admin.logentry",
     "pk": 10,
     "fields": {
-        "action_time": "2016-07-26T20:36:32Z",
+        "action_time": "2016-07-26T20:36:32",
         "user": 1,
         "content_type": 7,
         "object_id": "5",
@@ -1019,7 +1358,7 @@
     "model": "admin.logentry",
     "pk": 11,
     "fields": {
-        "action_time": "2016-08-06T09:25:06Z",
+        "action_time": "2016-08-06T09:25:06",
         "user": 1,
         "content_type": 7,
         "object_id": "8",
@@ -1032,7 +1371,7 @@
     "model": "admin.logentry",
     "pk": 12,
     "fields": {
-        "action_time": "2016-08-06T09:25:48Z",
+        "action_time": "2016-08-06T09:25:48",
         "user": 1,
         "content_type": 7,
         "object_id": "9",
@@ -1045,7 +1384,7 @@
     "model": "admin.logentry",
     "pk": 13,
     "fields": {
-        "action_time": "2016-08-06T17:52:32Z",
+        "action_time": "2016-08-06T17:52:32",
         "user": 1,
         "content_type": 7,
         "object_id": "10",
@@ -1058,7 +1397,7 @@
     "model": "admin.logentry",
     "pk": 14,
     "fields": {
-        "action_time": "2016-08-06T17:53:23Z",
+        "action_time": "2016-08-06T17:53:23",
         "user": 1,
         "content_type": 7,
         "object_id": "11",
@@ -1071,7 +1410,7 @@
     "model": "admin.logentry",
     "pk": 15,
     "fields": {
-        "action_time": "2016-08-06T17:53:54Z",
+        "action_time": "2016-08-06T17:53:54",
         "user": 1,
         "content_type": 7,
         "object_id": "12",
@@ -1084,7 +1423,7 @@
     "model": "admin.logentry",
     "pk": 16,
     "fields": {
-        "action_time": "2016-08-06T17:54:37Z",
+        "action_time": "2016-08-06T17:54:37",
         "user": 1,
         "content_type": 7,
         "object_id": "13",
@@ -1097,7 +1436,7 @@
     "model": "admin.logentry",
     "pk": 17,
     "fields": {
-        "action_time": "2016-08-06T17:55:37Z",
+        "action_time": "2016-08-06T17:55:37",
         "user": 1,
         "content_type": 7,
         "object_id": "14",
@@ -1110,7 +1449,7 @@
     "model": "admin.logentry",
     "pk": 18,
     "fields": {
-        "action_time": "2016-08-06T17:56:10Z",
+        "action_time": "2016-08-06T17:56:10",
         "user": 1,
         "content_type": 7,
         "object_id": "15",
@@ -1123,7 +1462,7 @@
     "model": "admin.logentry",
     "pk": 19,
     "fields": {
-        "action_time": "2016-08-07T10:53:21Z",
+        "action_time": "2016-08-07T10:53:21",
         "user": 1,
         "content_type": 7,
         "object_id": "10",
@@ -1136,7 +1475,7 @@
     "model": "admin.logentry",
     "pk": 20,
     "fields": {
-        "action_time": "2016-08-07T10:53:48Z",
+        "action_time": "2016-08-07T10:53:48",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -1149,7 +1488,7 @@
     "model": "admin.logentry",
     "pk": 21,
     "fields": {
-        "action_time": "2016-08-07T16:30:35Z",
+        "action_time": "2016-08-07T16:30:35",
         "user": 1,
         "content_type": 7,
         "object_id": "19",
@@ -1162,7 +1501,7 @@
     "model": "admin.logentry",
     "pk": 22,
     "fields": {
-        "action_time": "2016-08-07T16:35:34Z",
+        "action_time": "2016-08-07T16:35:34",
         "user": 1,
         "content_type": 8,
         "object_id": "4",
@@ -1175,7 +1514,7 @@
     "model": "admin.logentry",
     "pk": 23,
     "fields": {
-        "action_time": "2016-08-07T16:37:02Z",
+        "action_time": "2016-08-07T16:37:02",
         "user": 1,
         "content_type": 7,
         "object_id": "16",
@@ -1188,7 +1527,7 @@
     "model": "admin.logentry",
     "pk": 24,
     "fields": {
-        "action_time": "2016-08-17T15:36:25Z",
+        "action_time": "2016-08-17T15:36:25",
         "user": 1,
         "content_type": 9,
         "object_id": "1",
@@ -1201,7 +1540,7 @@
     "model": "admin.logentry",
     "pk": 25,
     "fields": {
-        "action_time": "2016-08-17T15:36:34Z",
+        "action_time": "2016-08-17T15:36:34",
         "user": 1,
         "content_type": 9,
         "object_id": "2",
@@ -1214,7 +1553,7 @@
     "model": "admin.logentry",
     "pk": 26,
     "fields": {
-        "action_time": "2016-08-17T15:36:51Z",
+        "action_time": "2016-08-17T15:36:51",
         "user": 1,
         "content_type": 9,
         "object_id": "3",
@@ -1227,7 +1566,7 @@
     "model": "admin.logentry",
     "pk": 27,
     "fields": {
-        "action_time": "2016-08-17T15:38:46Z",
+        "action_time": "2016-08-17T15:38:46",
         "user": 1,
         "content_type": 11,
         "object_id": "1",
@@ -1240,7 +1579,7 @@
     "model": "admin.logentry",
     "pk": 28,
     "fields": {
-        "action_time": "2016-08-17T15:38:59Z",
+        "action_time": "2016-08-17T15:38:59",
         "user": 1,
         "content_type": 11,
         "object_id": "2",
@@ -1253,7 +1592,7 @@
     "model": "admin.logentry",
     "pk": 29,
     "fields": {
-        "action_time": "2016-08-17T16:07:46Z",
+        "action_time": "2016-08-17T16:07:46",
         "user": 1,
         "content_type": 10,
         "object_id": "1",
@@ -1266,7 +1605,7 @@
     "model": "admin.logentry",
     "pk": 30,
     "fields": {
-        "action_time": "2016-08-17T16:10:29Z",
+        "action_time": "2016-08-17T16:10:29",
         "user": 1,
         "content_type": 10,
         "object_id": "1",
@@ -1279,7 +1618,7 @@
     "model": "admin.logentry",
     "pk": 31,
     "fields": {
-        "action_time": "2016-08-17T16:14:04Z",
+        "action_time": "2016-08-17T16:14:04",
         "user": 1,
         "content_type": 10,
         "object_id": "2",
@@ -1292,7 +1631,7 @@
     "model": "admin.logentry",
     "pk": 32,
     "fields": {
-        "action_time": "2016-08-17T16:35:54Z",
+        "action_time": "2016-08-17T16:35:54",
         "user": 1,
         "content_type": 7,
         "object_id": "13",
@@ -1305,7 +1644,7 @@
     "model": "admin.logentry",
     "pk": 33,
     "fields": {
-        "action_time": "2016-08-17T16:36:02Z",
+        "action_time": "2016-08-17T16:36:02",
         "user": 1,
         "content_type": 7,
         "object_id": "12",
@@ -1318,7 +1657,7 @@
     "model": "admin.logentry",
     "pk": 34,
     "fields": {
-        "action_time": "2016-08-17T16:37:27Z",
+        "action_time": "2016-08-17T16:37:27",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -1331,7 +1670,7 @@
     "model": "admin.logentry",
     "pk": 35,
     "fields": {
-        "action_time": "2016-08-17T16:37:52Z",
+        "action_time": "2016-08-17T16:37:52",
         "user": 1,
         "content_type": 7,
         "object_id": "7",
@@ -1344,7 +1683,7 @@
     "model": "admin.logentry",
     "pk": 36,
     "fields": {
-        "action_time": "2016-08-17T17:17:45Z",
+        "action_time": "2016-08-17T17:17:45",
         "user": 1,
         "content_type": 10,
         "object_id": "3",
@@ -1357,7 +1696,7 @@
     "model": "admin.logentry",
     "pk": 37,
     "fields": {
-        "action_time": "2016-08-17T17:42:08Z",
+        "action_time": "2016-08-17T17:42:08",
         "user": 1,
         "content_type": 10,
         "object_id": "3",
@@ -1370,7 +1709,7 @@
     "model": "admin.logentry",
     "pk": 38,
     "fields": {
-        "action_time": "2016-08-17T17:42:46Z",
+        "action_time": "2016-08-17T17:42:46",
         "user": 1,
         "content_type": 10,
         "object_id": "4",
@@ -1383,7 +1722,7 @@
     "model": "admin.logentry",
     "pk": 39,
     "fields": {
-        "action_time": "2016-08-17T17:45:08Z",
+        "action_time": "2016-08-17T17:45:08",
         "user": 1,
         "content_type": 7,
         "object_id": "14",
@@ -1396,7 +1735,7 @@
     "model": "admin.logentry",
     "pk": 40,
     "fields": {
-        "action_time": "2016-08-17T17:46:30Z",
+        "action_time": "2016-08-17T17:46:30",
         "user": 1,
         "content_type": 10,
         "object_id": "5",
@@ -1409,7 +1748,7 @@
     "model": "admin.logentry",
     "pk": 41,
     "fields": {
-        "action_time": "2016-08-17T17:46:47Z",
+        "action_time": "2016-08-17T17:46:47",
         "user": 1,
         "content_type": 10,
         "object_id": "6",
@@ -1422,7 +1761,7 @@
     "model": "admin.logentry",
     "pk": 42,
     "fields": {
-        "action_time": "2016-08-17T17:47:07Z",
+        "action_time": "2016-08-17T17:47:07",
         "user": 1,
         "content_type": 10,
         "object_id": "7",
@@ -1435,7 +1774,7 @@
     "model": "admin.logentry",
     "pk": 43,
     "fields": {
-        "action_time": "2016-08-17T17:47:46Z",
+        "action_time": "2016-08-17T17:47:46",
         "user": 1,
         "content_type": 10,
         "object_id": "2",
@@ -1448,13 +1787,754 @@
     "model": "admin.logentry",
     "pk": 44,
     "fields": {
-        "action_time": "2016-08-17T17:48:03Z",
+        "action_time": "2016-08-17T17:48:03",
         "user": 1,
         "content_type": 10,
         "object_id": "7",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-09)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>])",
         "action_flag": 2,
         "change_message": "Changed date."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2016-08-17T18:48:16",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "\u0425\u0456\u043c\u0456\u044f (2014-09-09)([<Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u041f\u0435\u0440\u0448\u0438\u0439 \u0432 MTV2 \u041f\u0440. \u041f\u0435\u0440\u0448\u043e\u0433\u043e>, <Student: Curiositi Moon>, <Student: \u0410\u043d\u0434\u0440\u0456\u04395 Jim>])",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2016-08-17T18:49:44",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "19",
+        "object_repr": "\u0416\u0430\u043d \u0411\u0430\u043b\u0430\u043d",
+        "action_flag": 2,
+        "change_message": "Changed first_name, last_name and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2016-08-20T10:36:41",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u043f\u0435\u0440\u0448\u0430  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2016-08-20T10:36:52",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0434\u0440\u0443\u0433\u0430  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2016-08-20T10:37:00",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0442\u0440\u0435\u0442\u044f  (Olena,Dewis)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2016-08-20T10:37:15",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2016-08-20T10:38:11",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2016-08-20T10:41:44",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "18",
+        "object_repr": "\u0404\u0432\u0433\u0435\u043d \u041f\u0435\u0440\u043a\u0456\u043d  (\u0433\u0440\u0443\u043f\u0430 \u0442\u0440\u0435\u0442\u044f  (Olena,Dewis))",
+        "action_flag": 2,
+        "change_message": "Changed first_name and last_name."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2016-08-20T10:42:24",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2016-08-20T10:42:33",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2016-08-20T10:42:42",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "406  (Olena,Dewis)",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2016-08-20T10:42:48",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "509",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2016-08-20T10:43:39",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "15",
+        "object_repr": "Nebo Sune  (406  (Olena,Dewis))",
+        "action_flag": 2,
+        "change_message": "Changed student_group and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2016-08-20T10:43:53",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Tim Sting  (509)",
+        "action_flag": 2,
+        "change_message": "Changed lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2016-08-20T10:44:12",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Alex Antoni  (426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d))",
+        "action_flag": 2,
+        "change_message": "Changed student_group and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2016-08-20T10:44:25",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4  (406  (Olena,Dewis))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2016-08-20T10:44:34",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2016-08-20T10:44:42",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (406  (Olena,Dewis))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2016-08-20T10:44:49",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d  (426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2016-08-20T10:44:57",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2016-08-20T10:45:04",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
+        "action_flag": 2,
+        "change_message": "Changed student_group."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2016-08-21T07:35:46",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u041a\u043e\u0436\u0435\u0432\u0438\u0439",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2016-08-21T07:36:13",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "\u041c\u0430\u0440\u0456\u044f \u041f\u0440\u0438\u0449\u0435\u043f\u043a\u0456\u043d\u0430",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2016-08-21T07:36:52",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "4",
+        "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0420\u0435\u043d\u043a\u0456\u043d",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2016-08-21T07:38:10",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 2017-05-24 12:00:00+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2016-08-21T07:38:39",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "\u0425\u0456\u043c\u0456\u044f 2017-05-30 13:00:00+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2016-08-21T10:47:05",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2016-08-21T10:47:32",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "4",
+        "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2016-08-21T10:48:01",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "5",
+        "object_repr": "\u0424\u0456\u043b\u043e\u0441\u043e\u0444\u0456\u044f",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2016-08-21T10:48:28",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430 2016-08-21 10:48:23+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2016-08-21T10:48:43",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e 2016-08-21 10:48:40+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2016-08-21T10:48:58",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "\u0424\u0456\u043b\u043e\u0441\u043e\u0444\u0456\u044f 2016-08-21 10:48:50+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2016-08-21T10:49:08",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430 2016-08-21 10:49:05+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2016-08-21T10:49:20",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e 2016-08-21 10:49:14+00:00",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2016-08-24T17:12:13",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "\u041a\u043e\u0436\u0435\u0432\u0438\u0439 \u042f\u0440\u043e\u0441\u043b\u0430\u0432",
+        "action_flag": 2,
+        "change_message": "Changed first_name."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2016-08-24T17:12:46",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "4",
+        "object_repr": "\u0420\u0435\u043d\u043a\u0456\u043d \u0410\u043d\u0434\u0440\u0456\u0439",
+        "action_flag": 2,
+        "change_message": "Changed first_name."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2016-08-28T11:14:54",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "20",
+        "object_repr": "\u0406\u0432\u0430\u043d \u0424\u0440\u0430\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 509)",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2016-08-28T11:15:25",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "21",
+        "object_repr": "\u041f\u0435\u0442\u0440 \u0421\u043a\u0440\u0438\u043f\u0456\u043d  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2016-08-28T11:15:48",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2016-08-28T11:35:12",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed photo and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2016-08-28T11:35:28",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed birthday."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2016-08-28T11:37:20",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "16",
+        "object_repr": "Olena Dewis  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed birthday, photo and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2016-08-28T11:37:42",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "15",
+        "object_repr": "Nebo Sune  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed birthday and photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2016-08-28T11:37:58",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "14",
+        "object_repr": "Curiositi Moon  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+        "action_time": "2016-08-28T11:38:13",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 422)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2016-08-28T11:38:37",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "20",
+        "object_repr": "\u0406\u0432\u0430\u043d \u0424\u0440\u0430\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 509)",
+        "action_flag": 2,
+        "change_message": "Changed birthday and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2016-08-28T11:39:05",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "19",
+        "object_repr": "\u0416\u0430\u043d \u0411\u0430\u043b\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed birthday."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2016-08-28T11:39:34",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "18",
+        "object_repr": "\u0404\u0432\u0433\u0435\u043d \u041f\u0435\u0440\u043a\u0456\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed birthday and lectures."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2016-08-28T11:40:02",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Tim Sting  (\u0413\u0440\u0443\u043f\u0430 509)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2016-08-28T11:40:34",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "12",
+        "object_repr": "Wiki Pedija  (\u0413\u0440\u0443\u043f\u0430 509)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2016-08-28T11:40:45",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Alex Antoni  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2016-08-28T11:41:00",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Alex Antoni  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed birthday."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2016-08-28T11:41:12",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2016-08-28T11:41:27",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed birthday."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2016-08-28T11:42:26",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2  (\u0413\u0440\u0443\u043f\u0430 422)",
+        "action_flag": 2,
+        "change_message": "Changed birthday and photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2016-08-28T11:42:36",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d  (\u0413\u0440\u0443\u043f\u0430 426)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2016-08-28T11:43:12",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4  (\u0413\u0440\u0443\u043f\u0430 406)",
+        "action_flag": 2,
+        "change_message": "Changed photo."
     }
 }
 ]
