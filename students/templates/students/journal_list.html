@@ -18,30 +18,26 @@
 
 {% block content %}
 <script>
+
 function myFunction() {
     var x = document.getElementById("schoolyears-select").value;
-        y = document.getElementById("subject-select").value;
-        z = document.getElementById("group-select-journal").value;
-/* alert(x);
-alert(y);
-alert(z); */
+    var y = document.getElementById("subject-select").value;
+    var z = document.getElementById("group-select-journal").value;
+
 $.ajax({
     type: "POST",
-    url: "http://127.0.0.1:8000/ajax_post",
+    url: "/ajax_post",   /* http://localhost:8000 не вказую бо цей запит відсилається на той же хост  */ 
     data: { csrfmiddlewaretoken: "{{ csrf_token }}",
             schoolyear_id:x,
             subject_id:y,
             group_id:z,
           },
     success: success
-})
+});
 }
 
-function success(data) {
-url = "http://127.0.0.1:8000"+data.url
-/*alert(url);*/
-window.location.replace(url);
-}
+function success(data) { window.location.replace(data.url); }
+
 </script>
 {% with year_id=request.GET.year  subject_id=request.GET.subject   group_id=request.GET.group  %}
 {% block menu_schoolyears %}

@@ -14,6 +14,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.http import JsonResponse
+from django.conf import settings 
 
 # Views for Journal
 def journal(request, year='2014', month='09'):
@@ -88,8 +89,7 @@ def ajax(request):
 
         print('ajax', start_year_date, year, month, subject_id, schoolyear_id, group_id)
     url = reverse('journal_year_month', args=(year,month,))
-    url = url + '/?year='+str(schoolyear_id)+'&subject='+str(subject_id)+'&group='+str(group_id)
-    print(url)
+    url = "".join((settings.PORTAL_URL, url, '/?year=%s'%schoolyear_id,'&subject=%s'%subject_id,'&group=%s'%group_id)) 
 
     return JsonResponse({'url':url})
 

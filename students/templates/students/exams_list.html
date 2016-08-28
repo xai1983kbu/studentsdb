@@ -23,8 +23,6 @@ function myFunction() {
     var x3 = document.getElementById("tables-exams-years-select").value;
     var x4 = document.getElementById("tables-exams-months-select").value;
 
-//alert(x1); 
-
 $.ajax({
     type: "POST",
     url: "/ajax_post_to_exams/",   /* http://localhost:8000 не вказую бо цей запит відсилається на той же хост  */ 
@@ -35,13 +33,10 @@ $.ajax({
             menu_months:x4,   /* дані з меню місяці */
           },
     success: success
-    })
+    });
 }
 
-function success(data) {
-//alert(data.url);
-window.location.replace(data.url);
-}
+function success(data) { window.location.replace(data.url); }
 
 </script>
 
