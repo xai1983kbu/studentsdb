@@ -1,0 +1,133 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Студенти{% endblock meta_title %}
+
+{% block title %}База Студентів{% endblock title %}
+
+{% block logo %}
+      <div class="col-xs-8">
+        <h1>Сервіс обліку студентів - Меню Студенти</h1>
+      </div>
+{% endblock logo %}
+{% block menu_group %}
+<!-- Скрити меню груп -->
+{% endblock menu_group %}
+
+{% block content %}
+<script>
+function myFunction() {
+    var x1 = document.getElementById("tables-exams-teachers-select").value;
+    var x2 = document.getElementById("tables-exams-groups-select").value;
+    var x3 = document.getElementById("tables-exams-years-select").value;
+    var x4 = document.getElementById("tables-exams-months-select").value;
+
+//alert(x1); 
+
+$.ajax({
+    type: "POST",
+    url: "/ajax_post_to_exams/",   /* http://localhost:8000 не вказую бо цей запит відсилається на той же хост  */ 
+    data: { csrfmiddlewaretoken: "{{ csrf_token }}",
+            menu_teachers:x1, /* дані з меню викладачі */
+            menu_groups:x2,   /* дані з меню групи */
+            menu_years:x3,    /* дані з меню роки */
+            menu_months:x4,   /* дані з меню місяці */
+          },
+    success: success
+    })
+}
+
+function success(data) {
+//alert(data.url);
+window.location.replace(data.url);
+}
+
+</script>
+
+<!-- Start Exams Listing -->
+{% with order_by=request.GET.order_by group_id=request.GET.group_id  teacher_id=request.GET.teacher_id year_id=request.GET.year_id    month_id=request.GET.month_id %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="col-xs-1">№ </br> п/п</th>
+      <th class="col-xs-2">Назва</br> предмету</th>
+      <th class="col-xs-2">
+        <!-- Меню викладачі -->Викладач
+          <select id="tables-exams-teachers-select" onchange="myFunction()">
+            <option value="{'order_by':'','filter':''}"
+                    {% if order_by == '' %} selected {% endif %}>Усі викладачі</option>
+            <option value="{'order_by':'last_name','filter':''}"
+                    {% if order_by == 'last_name' %} selected {% endif %}>Сортувати по прізвищу</option>
+            <option value="{'order_by':'first_name','filter':''}"
+                    {% if order_by == 'first_name' %} selected {% endif %}>Сортувати по імені</option>
+            {% for teacher in teachers %}
+            <option value="{'order_by':'','filter':'{{teacher.id}}'}" 
+                    {% if teacher.id == teacher_id|add:0 %} selected {% endif %}>{{teacher}}</option>
+            {% endfor %}
+          </select>
+      </th>
+      <th class="col-xs-1">
+        <!-- Меню груп -->Група
+          <select id="tables-exams-groups-select" onchange="myFunction()">
+            <option value="">Усі групи </option>
+            {% for group in groups %}
+            <option value="{{group.id}}" {% if group.id == group_id|add:0 %} selected {% endif %}>{{group.title}}</option>
+            {% endfor %}
+          </select>
+      </th>
+      <th class="col-xs-1">
+        <!-- Меню роки -->Рік
+          <select id="tables-exams-years-select" onchange="myFunction()">
+            <option value="">Усі роки </option>
+            {% for year in list_years %}
+            <option value="{{year|date:"Y"}}" {% if year|date:"Y" == year_id %} selected {% endif %}>{{year|date:"Y"}}</option>
+            {% endfor %}
+          </select>
+      </th>
+      <th class="col-xs-1">
+        <!-- Меню місяці -->Місяць 
+          <select id="tables-exams-months-select" onchange="myFunction()">
+            <option value="">Усі місяці </option>
+            {% for month in list_months %}
+            <option value="{{month|date:"n"}}" {% if month|date:"n" == month_id %} selected {% endif %}>{{month|date:"F"}}</option>
+            {% endfor %}
+          </select>
+      </th>
+      <th>День</br>місяця  </th>
+      <th>Час</br>початку</th>
+      <th class="col-xs-1">Дії </br>  </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for exam in exams %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{exam.title}}</td>
+      <td>{{exam.teaсher}}</td>
+      <td>{{exam.group.title}}</td>
+      <td>{{exam.date_time|date:"Y"}}</td>
+      <td>{{exam.date_time|date:"M"}}</td>
+      <td>{{exam.date_time|date:"j"}}</td>
+      <td>{{exam.date_time|date:"G:i"}}</td>
+      <td>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Дії
+			<span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="#">Редагувати</a></li>
+			<li><a href="#">Видалити</a></li>
+		  </ul>
+		</div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endwith %}
+    {% include "students/pagination/pagination_exams.html" %}
+
+{% endblock content %}
