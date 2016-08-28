@@ -11,7 +11,7 @@ def students_scroll(request):
     paginator = Paginator(students_list, 3) # Show 3 students per page
 
     page = request.POST.get('page')   # listen to AJAX POST from students_load_more.html > load_more.js
-    print(page)
+   # print(page)
     try:
         students = paginator.page(page)
     except PageNotAnInteger:
