@@ -65,9 +65,6 @@ def students_list(request):
                           'combined_page_rage':combined_page_rage})
 
 
-def students_add(reduest):
-    return HttpResponse('<h1>Student Add Form</h1>')
-
 def students_edit(request, sid):
     return HttpResponse('<h1>Edit Student %s</h1>' % sid)
 

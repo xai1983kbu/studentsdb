@@ -56,8 +56,7 @@ def exams_list(request):
     month_id=request.GET.get('month_id','')
     if month_id:
         exams = exams.filter(date_time__month = month_id)
-        print(month_id)
- 
+     
     paginator = Paginator(exams, 5) # Show 5 exams per page
 
     page = request.GET.get('page')

@@ -5,7 +5,7 @@ from .settings import MEDIA_ROOT, DEBUG
 urlpatterns = [
     # Students urls
     url(r'^$','students.views.students.students_list', name='home'),
-    url(r'^students/add/?$','students.views.students.students_add', name='students_add'),
+    url(r'^students/add/?$','students.views.students_add.students_add', name='students_add'),
     url(r'^students/(?P<sid>[0-9]+)/edit/?$','students.views.students.students_edit', name='students_edit'),
     url(r'^students/(?P<sid>[0-9]+)/delete/?$','students.views.students.students_delete', name='students_delete'),
 

@@ -57,7 +57,7 @@
         {% url 'students_load_more' as url6 %}
         {% url 'students_scroll' as url7 %}
 
-          <li role="presentation" {% if url1 == request.path  %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
+          <li role="presentation" {% if url1 == request.path or 'students/' in request.path  %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
           <li role="presentation" {% if url6 in request.path  %} class="active" {% endif %}><a href="{% url "students_load_more" %}">Студенти L M</a></li>
           <li role="presentation" {% if url7 in request.path  %} class="active" {% endif %}><a href="{% url "students_scroll" %}">Студенти Scroll</a></li>
           <li role="presentation" {% if url2 in request.path  %} class="active" {% endif %}><a href="{% url "journal" %}">Відвідування</a></li>

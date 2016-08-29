@@ -27,8 +27,6 @@ def journal(request, year='2014', month='09'):
         year = SchoolYear.objects.get(id=1).start_year_date.year
         month = SchoolYear.objects.get(id=1).start_year_date.month
 
-
-
     list_subjects = Subject.objects.all()           # Список предметів
     list_schoolyears = SchoolYear.objects.all()     # Список навчальних років
     list_groups = Group.objects.all()               # Список навчальних груп
@@ -66,7 +64,6 @@ def journal(request, year='2014', month='09'):
                                                         })
 
 def ajax(request):
-
     if request.is_ajax():
         if 'schoolyear_id' in request.POST:
             schoolyear_id = request.POST['schoolyear_id']         # Передається ajax запитом з journal_list.html
@@ -87,7 +84,6 @@ def ajax(request):
         else:
             group_id = False
 
-        print('ajax', start_year_date, year, month, subject_id, schoolyear_id, group_id)
     url = reverse('journal_year_month', args=(year,month,))
     url = "".join((settings.PORTAL_URL, url, '/?year=%s'%schoolyear_id,'&subject=%s'%subject_id,'&group=%s'%group_id)) 
 
