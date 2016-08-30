@@ -24,15 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Table Exams 
-#table-exams-field-group  {
-  height: 30px;
-  border-color: #e89895;
-  width: 80%
+/* Form Styles */
+textarea,
+select,
+input {
+  max-width: 300px;
 }
 
-#tables-exams-group-select  {
-  height: 30px;
-  border-color: #e89895;
-  width: 80%
-}*/
