@@ -1,7 +1,6 @@
 [
 {
     "model": "contenttypes.contenttype",
-    "pk": 1,
     "fields": {
         "app_label": "admin",
         "model": "logentry"
@@ -9,7 +8,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 2,
     "fields": {
         "app_label": "auth",
         "model": "permission"
@@ -17,7 +15,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 3,
     "fields": {
         "app_label": "auth",
         "model": "group"
@@ -25,7 +22,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 4,
     "fields": {
         "app_label": "auth",
         "model": "user"
@@ -33,7 +29,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 5,
     "fields": {
         "app_label": "contenttypes",
         "model": "contenttype"
@@ -41,7 +36,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 6,
     "fields": {
         "app_label": "sessions",
         "model": "session"
@@ -49,7 +43,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 7,
     "fields": {
         "app_label": "students",
         "model": "student"
@@ -57,7 +50,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 8,
     "fields": {
         "app_label": "students",
         "model": "group"
@@ -65,7 +57,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 9,
     "fields": {
         "app_label": "students",
         "model": "schoolyear"
@@ -73,7 +64,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 10,
     "fields": {
         "app_label": "students",
         "model": "lecture"
@@ -81,7 +71,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 11,
     "fields": {
         "app_label": "students",
         "model": "subject"
@@ -89,7 +78,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 12,
     "fields": {
         "app_label": "students",
         "model": "exam"
@@ -97,7 +85,6 @@
 },
 {
     "model": "contenttypes.contenttype",
-    "pk": 13,
     "fields": {
         "app_label": "students",
         "model": "teacher"
@@ -166,10 +153,7 @@
         "birthday": "2016-09-24",
         "photo": "",
         "ticket": "1232",
-        "notes": "",
-        "lectures": [
-            3
-        ]
+        "notes": ""
     }
 },
 {
@@ -181,15 +165,9 @@
         "middle_name": "\u0413\u0440\u0438\u0433\u043e\u0440\u043e\u0432\u0438\u0447",
         "student_group": 5,
         "birthday": "2016-07-24",
-        "photo": "./my_photo_DYN9qg2.jpg",
+        "photo": "",
         "ticket": "123",
-        "notes": "",
-        "lectures": [
-            2,
-            5,
-            7,
-            8
-        ]
+        "notes": ""
     }
 },
 {
@@ -203,11 +181,7 @@
         "birthday": "2016-07-24",
         "photo": "",
         "ticket": "1233",
-        "notes": "",
-        "lectures": [
-            3,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -221,13 +195,7 @@
         "birthday": null,
         "photo": "",
         "ticket": "75",
-        "notes": "",
-        "lectures": [
-            2,
-            4,
-            5,
-            7
-        ]
+        "notes": ""
     }
 },
 {
@@ -239,13 +207,9 @@
         "middle_name": "",
         "student_group": 1,
         "birthday": null,
-        "photo": "./no_photo_Y0ZHUOc.jpg",
+        "photo": "",
         "ticket": "65",
-        "notes": "",
-        "lectures": [
-            6,
-            8
-        ]
+        "notes": ""
     }
 },
 {
@@ -259,13 +223,7 @@
         "birthday": "2016-10-09",
         "photo": "",
         "ticket": "999",
-        "notes": "",
-        "lectures": [
-            2,
-            3,
-            5,
-            7
-        ]
+        "notes": ""
     }
 },
 {
@@ -279,11 +237,7 @@
         "birthday": "2016-08-15",
         "photo": "",
         "ticket": "1111",
-        "notes": "",
-        "lectures": [
-            4,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -295,16 +249,9 @@
         "middle_name": "\u041c\u0438\u0435\u043e\u043b\u0430\u0439\u043e\u0432\u0438\u0447",
         "student_group": 5,
         "birthday": "2016-08-01",
-        "photo": "./no_photo_jR3jAJN.jpg",
+        "photo": "",
         "ticket": "555",
-        "notes": "",
-        "lectures": [
-            4,
-            5,
-            6,
-            7,
-            8
-        ]
+        "notes": ""
     }
 },
 {
@@ -318,14 +265,7 @@
         "birthday": "2016-09-22",
         "photo": "",
         "ticket": "33",
-        "notes": "",
-        "lectures": [
-            8,
-            2,
-            3,
-            5,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -339,11 +279,7 @@
         "birthday": "2016-08-14",
         "photo": "",
         "ticket": "1111",
-        "notes": "",
-        "lectures": [
-            4,
-            5
-        ]
+        "notes": ""
     }
 },
 {
@@ -357,13 +293,7 @@
         "birthday": "2016-08-21",
         "photo": "",
         "ticket": "234",
-        "notes": "",
-        "lectures": [
-            8,
-            2,
-            4,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -377,13 +307,7 @@
         "birthday": "2016-09-08",
         "photo": "./tumblr_nisz4gBqia1rl53x2o2_400_SaOvCPG.png",
         "ticket": "12",
-        "notes": "",
-        "lectures": [
-            2,
-            4,
-            5,
-            8
-        ]
+        "notes": ""
     }
 },
 {
@@ -397,13 +321,7 @@
         "birthday": "2016-09-23",
         "photo": "./lucy_hale_png__1__by_bayanfly-d97c6lr_WOOztSA.png",
         "ticket": "1",
-        "notes": "",
-        "lectures": [
-            8,
-            3,
-            5,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -417,15 +335,7 @@
         "birthday": "2016-09-15",
         "photo": "./tumblr_mz75gxtnin1rshr5to1_500_yQf6JjP.png",
         "ticket": "3",
-        "notes": "",
-        "lectures": [
-            5,
-            8,
-            2,
-            3,
-            4,
-            6
-        ]
+        "notes": ""
     }
 },
 {
@@ -439,12 +349,7 @@
         "birthday": "2016-11-16",
         "photo": "",
         "ticket": "1",
-        "notes": "",
-        "lectures": [
-            8,
-            3,
-            5
-        ]
+        "notes": ""
     }
 },
 {
@@ -458,12 +363,7 @@
         "birthday": "2016-11-28",
         "photo": "",
         "ticket": "1",
-        "notes": "",
-        "lectures": [
-            2,
-            4,
-            7
-        ]
+        "notes": ""
     }
 },
 {
@@ -477,13 +377,7 @@
         "birthday": "2016-09-28",
         "photo": "",
         "ticket": "234",
-        "notes": "",
-        "lectures": [
-            5,
-            2,
-            3,
-            4
-        ]
+        "notes": ""
     }
 },
 {
@@ -497,12 +391,7 @@
         "birthday": "2016-08-28",
         "photo": "",
         "ticket": "234",
-        "notes": "",
-        "lectures": [
-            2,
-            4,
-            5
-        ]
+        "notes": ""
     }
 },
 {
@@ -516,12 +405,63 @@
         "birthday": "2016-10-28",
         "photo": "./tumblr_mdf2tydPTM1rhe4w0o1_500_1BvanvW.png",
         "ticket": "33",
-        "notes": "",
-        "lectures": [
-            4,
-            5,
-            6
-        ]
+        "notes": ""
+    }
+},
+{
+    "model": "students.student",
+    "pk": 23,
+    "fields": {
+        "first_name": "\u041c\u0430\u043a\u0441\u0438\u043c",
+        "last_name": "\u0421\u0430\u043b\u043e",
+        "middle_name": "\u041f\u0435\u0442\u0440\u043e\u0432\u0438\u0447",
+        "student_group": 1,
+        "birthday": "1984-12-30",
+        "photo": "./piTd12NabEU_X7NVWPb.jpg",
+        "ticket": "15",
+        "notes": ""
+    }
+},
+{
+    "model": "students.student",
+    "pk": 24,
+    "fields": {
+        "first_name": "\u041c\u0430\u043a\u0441\u0438\u043c",
+        "last_name": "\u0421\u0430\u043b\u043e",
+        "middle_name": "\u041f\u0435\u0442\u0440\u043e\u0432\u0438\u0447",
+        "student_group": 1,
+        "birthday": "1984-12-30",
+        "photo": "./piTd12NabEU_j3nBFXd.jpg",
+        "ticket": "15",
+        "notes": ""
+    }
+},
+{
+    "model": "students.student",
+    "pk": 25,
+    "fields": {
+        "first_name": "A",
+        "last_name": "B",
+        "middle_name": "C",
+        "student_group": 5,
+        "birthday": "1984-01-23",
+        "photo": "./tumblr_mdf2tydPTM1rhe4w0o1_500_1BvanvW_1lPfxUn.png",
+        "ticket": "1",
+        "notes": "ABC"
+    }
+},
+{
+    "model": "students.student",
+    "pk": 26,
+    "fields": {
+        "first_name": "J",
+        "last_name": "H",
+        "middle_name": "",
+        "student_group": 3,
+        "birthday": "1984-12-30",
+        "photo": "",
+        "ticket": "12",
+        "notes": ""
     }
 },
 {
@@ -857,358 +797,435 @@
 },
 {
     "model": "auth.permission",
-    "pk": 1,
     "fields": {
         "name": "Can add log entry",
-        "content_type": 1,
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
         "codename": "add_logentry"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 2,
     "fields": {
         "name": "Can change log entry",
-        "content_type": 1,
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
         "codename": "change_logentry"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 3,
     "fields": {
         "name": "Can delete log entry",
-        "content_type": 1,
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
         "codename": "delete_logentry"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 4,
     "fields": {
         "name": "Can add permission",
-        "content_type": 2,
+        "content_type": [
+            "auth",
+            "permission"
+        ],
         "codename": "add_permission"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 5,
     "fields": {
         "name": "Can change permission",
-        "content_type": 2,
+        "content_type": [
+            "auth",
+            "permission"
+        ],
         "codename": "change_permission"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 6,
     "fields": {
         "name": "Can delete permission",
-        "content_type": 2,
+        "content_type": [
+            "auth",
+            "permission"
+        ],
         "codename": "delete_permission"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 7,
     "fields": {
         "name": "Can add group",
-        "content_type": 3,
+        "content_type": [
+            "auth",
+            "group"
+        ],
         "codename": "add_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 8,
     "fields": {
         "name": "Can change group",
-        "content_type": 3,
+        "content_type": [
+            "auth",
+            "group"
+        ],
         "codename": "change_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 9,
     "fields": {
         "name": "Can delete group",
-        "content_type": 3,
+        "content_type": [
+            "auth",
+            "group"
+        ],
         "codename": "delete_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 10,
     "fields": {
         "name": "Can add user",
-        "content_type": 4,
+        "content_type": [
+            "auth",
+            "user"
+        ],
         "codename": "add_user"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 11,
     "fields": {
         "name": "Can change user",
-        "content_type": 4,
+        "content_type": [
+            "auth",
+            "user"
+        ],
         "codename": "change_user"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 12,
     "fields": {
         "name": "Can delete user",
-        "content_type": 4,
+        "content_type": [
+            "auth",
+            "user"
+        ],
         "codename": "delete_user"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 13,
     "fields": {
         "name": "Can add content type",
-        "content_type": 5,
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
         "codename": "add_contenttype"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 14,
     "fields": {
         "name": "Can change content type",
-        "content_type": 5,
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
         "codename": "change_contenttype"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 15,
     "fields": {
         "name": "Can delete content type",
-        "content_type": 5,
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
         "codename": "delete_contenttype"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 16,
     "fields": {
         "name": "Can add session",
-        "content_type": 6,
+        "content_type": [
+            "sessions",
+            "session"
+        ],
         "codename": "add_session"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 17,
     "fields": {
         "name": "Can change session",
-        "content_type": 6,
+        "content_type": [
+            "sessions",
+            "session"
+        ],
         "codename": "change_session"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 18,
     "fields": {
         "name": "Can delete session",
-        "content_type": 6,
+        "content_type": [
+            "sessions",
+            "session"
+        ],
         "codename": "delete_session"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 19,
     "fields": {
         "name": "Can add student",
-        "content_type": 7,
+        "content_type": [
+            "students",
+            "student"
+        ],
         "codename": "add_student"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 20,
     "fields": {
         "name": "Can change student",
-        "content_type": 7,
+        "content_type": [
+            "students",
+            "student"
+        ],
         "codename": "change_student"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 21,
     "fields": {
         "name": "Can delete student",
-        "content_type": 7,
+        "content_type": [
+            "students",
+            "student"
+        ],
         "codename": "delete_student"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 22,
     "fields": {
         "name": "Can add \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8,
+        "content_type": [
+            "students",
+            "group"
+        ],
         "codename": "add_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 23,
     "fields": {
         "name": "Can change \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8,
+        "content_type": [
+            "students",
+            "group"
+        ],
         "codename": "change_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 24,
     "fields": {
         "name": "Can delete \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8,
+        "content_type": [
+            "students",
+            "group"
+        ],
         "codename": "delete_group"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 25,
     "fields": {
         "name": "Can add \u041d\u0430\u0432\u0447\u0430\u043b\u044c\u043d\u0438\u0439 \u0440\u0456\u043a",
-        "content_type": 9,
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "codename": "add_schoolyear"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 26,
     "fields": {
         "name": "Can change \u041d\u0430\u0432\u0447\u0430\u043b\u044c\u043d\u0438\u0439 \u0440\u0456\u043a",
-        "content_type": 9,
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "codename": "change_schoolyear"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 27,
     "fields": {
         "name": "Can delete \u041d\u0430\u0432\u0447\u0430\u043b\u044c\u043d\u0438\u0439 \u0440\u0456\u043a",
-        "content_type": 9,
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "codename": "delete_schoolyear"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 28,
     "fields": {
         "name": "Can add \u041f\u0435\u0440\u0435\u043b\u0456\u043a \u0437\u0430\u043d\u044f\u0442\u044c",
-        "content_type": 10,
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "codename": "add_lecture"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 29,
     "fields": {
         "name": "Can change \u041f\u0435\u0440\u0435\u043b\u0456\u043a \u0437\u0430\u043d\u044f\u0442\u044c",
-        "content_type": 10,
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "codename": "change_lecture"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 30,
     "fields": {
         "name": "Can delete \u041f\u0435\u0440\u0435\u043b\u0456\u043a \u0437\u0430\u043d\u044f\u0442\u044c",
-        "content_type": 10,
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "codename": "delete_lecture"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 31,
     "fields": {
         "name": "Can add \u041f\u0440\u0435\u0434\u043c\u0435\u0442",
-        "content_type": 11,
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "codename": "add_subject"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 32,
     "fields": {
         "name": "Can change \u041f\u0440\u0435\u0434\u043c\u0435\u0442",
-        "content_type": 11,
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "codename": "change_subject"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 33,
     "fields": {
         "name": "Can delete \u041f\u0440\u0435\u0434\u043c\u0435\u0442",
-        "content_type": 11,
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "codename": "delete_subject"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 34,
     "fields": {
         "name": "Can add \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
-        "content_type": 12,
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "codename": "add_exam"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 35,
     "fields": {
         "name": "Can change \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
-        "content_type": 12,
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "codename": "change_exam"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 36,
     "fields": {
         "name": "Can delete \u0415\u043a\u0437\u0430\u043c\u0435\u043d",
-        "content_type": 12,
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "codename": "delete_exam"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 37,
     "fields": {
         "name": "Can add \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
-        "content_type": 13,
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "codename": "add_teacher"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 38,
     "fields": {
         "name": "Can change \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
-        "content_type": 13,
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "codename": "change_teacher"
     }
 },
 {
     "model": "auth.permission",
-    "pk": 39,
     "fields": {
         "name": "Can delete \u0412\u0438\u043a\u043b\u0430\u0434\u0430\u0447",
-        "content_type": 13,
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "codename": "delete_teacher"
     }
 },
 {
     "model": "auth.user",
-    "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$24000$651RvcbtujFC$foROaHeKtLOwNvFT5IC+Yz/mWhzdrDjB7JxX0EBqkWk=",
         "last_login": "2016-08-17T15:36:08",
@@ -1229,8 +1246,13 @@
     "pk": 1,
     "fields": {
         "action_time": "2016-07-26T18:11:21",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1242,8 +1264,13 @@
     "pk": 2,
     "fields": {
         "action_time": "2016-07-26T18:11:24",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1255,8 +1282,13 @@
     "pk": 3,
     "fields": {
         "action_time": "2016-07-26T18:11:31",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "5",
         "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d",
         "action_flag": 2,
@@ -1268,8 +1300,13 @@
     "pk": 4,
     "fields": {
         "action_time": "2016-07-26T18:11:54",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "6",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4",
         "action_flag": 2,
@@ -1281,8 +1318,13 @@
     "pk": 5,
     "fields": {
         "action_time": "2016-07-26T19:59:05",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "2",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2",
         "action_flag": 2,
@@ -1294,8 +1336,13 @@
     "pk": 6,
     "fields": {
         "action_time": "2016-07-26T20:09:19",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "5",
         "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d",
         "action_flag": 2,
@@ -1307,8 +1354,13 @@
     "pk": 7,
     "fields": {
         "action_time": "2016-07-26T20:09:26",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "6",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4",
         "action_flag": 2,
@@ -1320,8 +1372,13 @@
     "pk": 8,
     "fields": {
         "action_time": "2016-07-26T20:09:40",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "3",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "action_flag": 2,
@@ -1333,8 +1390,13 @@
     "pk": 9,
     "fields": {
         "action_time": "2016-07-26T20:09:53",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1346,8 +1408,13 @@
     "pk": 10,
     "fields": {
         "action_time": "2016-07-26T20:36:32",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "5",
         "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d",
         "action_flag": 2,
@@ -1359,8 +1426,13 @@
     "pk": 11,
     "fields": {
         "action_time": "2016-08-06T09:25:06",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "8",
         "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "action_flag": 1,
@@ -1372,8 +1444,13 @@
     "pk": 12,
     "fields": {
         "action_time": "2016-08-06T09:25:48",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "9",
         "object_repr": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d",
         "action_flag": 1,
@@ -1385,8 +1462,13 @@
     "pk": 13,
     "fields": {
         "action_time": "2016-08-06T17:52:32",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "10",
         "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d",
         "action_flag": 1,
@@ -1398,8 +1480,13 @@
     "pk": 14,
     "fields": {
         "action_time": "2016-08-06T17:53:23",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "11",
         "object_repr": "Alex Antoni",
         "action_flag": 1,
@@ -1411,8 +1498,13 @@
     "pk": 15,
     "fields": {
         "action_time": "2016-08-06T17:53:54",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "12",
         "object_repr": "Wiki Pedija",
         "action_flag": 1,
@@ -1424,8 +1516,13 @@
     "pk": 16,
     "fields": {
         "action_time": "2016-08-06T17:54:37",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "13",
         "object_repr": "Tim Sting",
         "action_flag": 1,
@@ -1437,8 +1534,13 @@
     "pk": 17,
     "fields": {
         "action_time": "2016-08-06T17:55:37",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "14",
         "object_repr": "Curiositi Moon",
         "action_flag": 1,
@@ -1450,8 +1552,13 @@
     "pk": 18,
     "fields": {
         "action_time": "2016-08-06T17:56:10",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "15",
         "object_repr": "Nebo Sune",
         "action_flag": 1,
@@ -1463,8 +1570,13 @@
     "pk": 19,
     "fields": {
         "action_time": "2016-08-07T10:53:21",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "10",
         "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d",
         "action_flag": 2,
@@ -1476,8 +1588,13 @@
     "pk": 20,
     "fields": {
         "action_time": "2016-08-07T10:53:48",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1489,8 +1606,13 @@
     "pk": 21,
     "fields": {
         "action_time": "2016-08-07T16:30:35",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "19",
         "object_repr": "\u0414\u0440\u0443\u0433\u0438\u0439 \u0432 MTV2 \u0414\u0440. \u041f\u0435\u0440\u0448\u043e\u0433\u043e",
         "action_flag": 2,
@@ -1502,8 +1624,13 @@
     "pk": 22,
     "fields": {
         "action_time": "2016-08-07T16:35:34",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "4",
         "object_repr": "MTV2  (\u0410\u0410\u043d\u0434\u0440\u0456\u0439,\u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d)",
         "action_flag": 3,
@@ -1515,8 +1642,13 @@
     "pk": 23,
     "fields": {
         "action_time": "2016-08-07T16:37:02",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "16",
         "object_repr": "Olena Dewis",
         "action_flag": 2,
@@ -1528,8 +1660,13 @@
     "pk": 24,
     "fields": {
         "action_time": "2016-08-17T15:36:25",
-        "user": 1,
-        "content_type": 9,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "object_id": "1",
         "object_repr": "2014/2015 (2014-09-01 : 2015-05-31)",
         "action_flag": 1,
@@ -1541,8 +1678,13 @@
     "pk": 25,
     "fields": {
         "action_time": "2016-08-17T15:36:34",
-        "user": 1,
-        "content_type": 9,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "object_id": "2",
         "object_repr": "2015/2016 (2015-09-01 : 2016-05-31)",
         "action_flag": 1,
@@ -1554,8 +1696,13 @@
     "pk": 26,
     "fields": {
         "action_time": "2016-08-17T15:36:51",
-        "user": 1,
-        "content_type": 9,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "schoolyear"
+        ],
         "object_id": "3",
         "object_repr": "2016/2017 (2016-09-01 : 2017-05-31)",
         "action_flag": 1,
@@ -1567,8 +1714,13 @@
     "pk": 27,
     "fields": {
         "action_time": "2016-08-17T15:38:46",
-        "user": 1,
-        "content_type": 11,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "object_id": "1",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430",
         "action_flag": 1,
@@ -1580,8 +1732,13 @@
     "pk": 28,
     "fields": {
         "action_time": "2016-08-17T15:38:59",
-        "user": 1,
-        "content_type": 11,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "object_id": "2",
         "object_repr": "\u0425\u0456\u043c\u0456\u044f",
         "action_flag": 1,
@@ -1593,8 +1750,13 @@
     "pk": 29,
     "fields": {
         "action_time": "2016-08-17T16:07:46",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "1",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2014-09-08)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d>])",
         "action_flag": 1,
@@ -1606,8 +1768,13 @@
     "pk": 30,
     "fields": {
         "action_time": "2016-08-17T16:10:29",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "1",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2014-09-08)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d>])",
         "action_flag": 3,
@@ -1619,8 +1786,13 @@
     "pk": 31,
     "fields": {
         "action_time": "2016-08-17T16:14:04",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "2",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2014-09-17)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>])",
         "action_flag": 1,
@@ -1632,8 +1804,13 @@
     "pk": 32,
     "fields": {
         "action_time": "2016-08-17T16:35:54",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "13",
         "object_repr": "Tim Sting",
         "action_flag": 2,
@@ -1645,8 +1822,13 @@
     "pk": 33,
     "fields": {
         "action_time": "2016-08-17T16:36:02",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "12",
         "object_repr": "Wiki Pedija",
         "action_flag": 2,
@@ -1658,8 +1840,13 @@
     "pk": 34,
     "fields": {
         "action_time": "2016-08-17T16:37:27",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1671,8 +1858,13 @@
     "pk": 35,
     "fields": {
         "action_time": "2016-08-17T16:37:52",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "7",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim",
         "action_flag": 2,
@@ -1684,8 +1876,13 @@
     "pk": 36,
     "fields": {
         "action_time": "2016-08-17T17:17:45",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "3",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-13)([<Student: \u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2>, <Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u0410\u043d\u0434\u0440\u0456\u04395 Jim>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u0410\u043d",
         "action_flag": 1,
@@ -1697,8 +1894,13 @@
     "pk": 37,
     "fields": {
         "action_time": "2016-08-17T17:42:08",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "3",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-13)([<Student: \u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2>, <Student: \u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>])",
         "action_flag": 2,
@@ -1710,8 +1912,13 @@
     "pk": 38,
     "fields": {
         "action_time": "2016-08-17T17:42:46",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "4",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-19)([<Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>, <Student: Wiki Pedija>, <Student: Curiositi Moon>])",
         "action_flag": 1,
@@ -1723,8 +1930,13 @@
     "pk": 39,
     "fields": {
         "action_time": "2016-08-17T17:45:08",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "14",
         "object_repr": "Curiositi Moon",
         "action_flag": 2,
@@ -1736,8 +1948,13 @@
     "pk": 40,
     "fields": {
         "action_time": "2016-08-17T17:46:30",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "5",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-30)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>, <Student: Wiki Pedija>, <Student: Curiositi Moon>, <Student: Olena D",
         "action_flag": 1,
@@ -1749,8 +1966,13 @@
     "pk": 41,
     "fields": {
         "action_time": "2016-08-17T17:46:47",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "6",
         "object_repr": "\u0425\u0456\u043c\u0456\u044f (2016-09-15)([<Student: \u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04395 Jim>, <Student: \u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>])",
         "action_flag": 1,
@@ -1762,8 +1984,13 @@
     "pk": 42,
     "fields": {
         "action_time": "2016-08-17T17:47:07",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "7",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-19)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>])",
         "action_flag": 1,
@@ -1775,8 +2002,13 @@
     "pk": 43,
     "fields": {
         "action_time": "2016-08-17T17:47:46",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "2",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-17)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: Curiositi Moon>])",
         "action_flag": 2,
@@ -1788,8 +2020,13 @@
     "pk": 44,
     "fields": {
         "action_time": "2016-08-17T17:48:03",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "7",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 (2016-09-09)([<Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4>, <Student: \u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>])",
         "action_flag": 2,
@@ -1801,8 +2038,13 @@
     "pk": 45,
     "fields": {
         "action_time": "2016-08-17T18:48:16",
-        "user": 1,
-        "content_type": 10,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "lecture"
+        ],
         "object_id": "8",
         "object_repr": "\u0425\u0456\u043c\u0456\u044f (2014-09-09)([<Student: \u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d>, <Student: \u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d>, <Student: \u041f\u0435\u0440\u0448\u0438\u0439 \u0432 MTV2 \u041f\u0440. \u041f\u0435\u0440\u0448\u043e\u0433\u043e>, <Student: Curiositi Moon>, <Student: \u0410\u043d\u0434\u0440\u0456\u04395 Jim>])",
         "action_flag": 1,
@@ -1814,8 +2056,13 @@
     "pk": 46,
     "fields": {
         "action_time": "2016-08-17T18:49:44",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "19",
         "object_repr": "\u0416\u0430\u043d \u0411\u0430\u043b\u0430\u043d",
         "action_flag": 2,
@@ -1827,8 +2074,13 @@
     "pk": 47,
     "fields": {
         "action_time": "2016-08-20T10:36:41",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "5",
         "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u043f\u0435\u0440\u0448\u0430  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2)",
         "action_flag": 2,
@@ -1840,8 +2092,13 @@
     "pk": 48,
     "fields": {
         "action_time": "2016-08-20T10:36:52",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "3",
         "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0434\u0440\u0443\u0433\u0430  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d)",
         "action_flag": 2,
@@ -1853,8 +2110,13 @@
     "pk": 49,
     "fields": {
         "action_time": "2016-08-20T10:37:00",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "2",
         "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0442\u0440\u0435\u0442\u044f  (Olena,Dewis)",
         "action_flag": 2,
@@ -1866,8 +2128,13 @@
     "pk": 50,
     "fields": {
         "action_time": "2016-08-20T10:37:15",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "1",
         "object_repr": "\u0433\u0440\u0443\u043f\u0430 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430",
         "action_flag": 2,
@@ -1879,8 +2146,13 @@
     "pk": 51,
     "fields": {
         "action_time": "2016-08-20T10:38:11",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "10",
         "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d",
         "action_flag": 2,
@@ -1892,8 +2164,13 @@
     "pk": 52,
     "fields": {
         "action_time": "2016-08-20T10:41:44",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "18",
         "object_repr": "\u0404\u0432\u0433\u0435\u043d \u041f\u0435\u0440\u043a\u0456\u043d  (\u0433\u0440\u0443\u043f\u0430 \u0442\u0440\u0435\u0442\u044f  (Olena,Dewis))",
         "action_flag": 2,
@@ -1905,8 +2182,13 @@
     "pk": 53,
     "fields": {
         "action_time": "2016-08-20T10:42:24",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "5",
         "object_repr": "422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2)",
         "action_flag": 2,
@@ -1918,8 +2200,13 @@
     "pk": 54,
     "fields": {
         "action_time": "2016-08-20T10:42:33",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "3",
         "object_repr": "426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d)",
         "action_flag": 2,
@@ -1931,8 +2218,13 @@
     "pk": 55,
     "fields": {
         "action_time": "2016-08-20T10:42:42",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "2",
         "object_repr": "406  (Olena,Dewis)",
         "action_flag": 2,
@@ -1944,8 +2236,13 @@
     "pk": 56,
     "fields": {
         "action_time": "2016-08-20T10:42:48",
-        "user": 1,
-        "content_type": 8,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ],
         "object_id": "1",
         "object_repr": "509",
         "action_flag": 2,
@@ -1957,8 +2254,13 @@
     "pk": 57,
     "fields": {
         "action_time": "2016-08-20T10:43:39",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "15",
         "object_repr": "Nebo Sune  (406  (Olena,Dewis))",
         "action_flag": 2,
@@ -1970,8 +2272,13 @@
     "pk": 58,
     "fields": {
         "action_time": "2016-08-20T10:43:53",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "13",
         "object_repr": "Tim Sting  (509)",
         "action_flag": 2,
@@ -1983,8 +2290,13 @@
     "pk": 59,
     "fields": {
         "action_time": "2016-08-20T10:44:12",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "11",
         "object_repr": "Alex Antoni  (426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d))",
         "action_flag": 2,
@@ -1996,8 +2308,13 @@
     "pk": 60,
     "fields": {
         "action_time": "2016-08-20T10:44:25",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "6",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4  (406  (Olena,Dewis))",
         "action_flag": 2,
@@ -2009,8 +2326,13 @@
     "pk": 61,
     "fields": {
         "action_time": "2016-08-20T10:44:34",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "9",
         "object_repr": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
         "action_flag": 2,
@@ -2022,8 +2344,13 @@
     "pk": 62,
     "fields": {
         "action_time": "2016-08-20T10:44:42",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "8",
         "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (406  (Olena,Dewis))",
         "action_flag": 2,
@@ -2035,8 +2362,13 @@
     "pk": 63,
     "fields": {
         "action_time": "2016-08-20T10:44:49",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "5",
         "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d  (426  (\u042f\u0410\u043d\u0434\u0440\u0456\u0439,\u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d))",
         "action_flag": 2,
@@ -2048,8 +2380,13 @@
     "pk": 64,
     "fields": {
         "action_time": "2016-08-20T10:44:57",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "3",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
         "action_flag": 2,
@@ -2061,8 +2398,13 @@
     "pk": 65,
     "fields": {
         "action_time": "2016-08-20T10:45:04",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "2",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2  (422  (\u0410\u043d\u0434\u0440\u0456\u04392,\u0421\u043e\u0440\u043e\u0447\u0430\u043d2))",
         "action_flag": 2,
@@ -2074,8 +2416,13 @@
     "pk": 66,
     "fields": {
         "action_time": "2016-08-21T07:35:46",
-        "user": 1,
-        "content_type": 13,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "object_id": "2",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u041a\u043e\u0436\u0435\u0432\u0438\u0439",
         "action_flag": 1,
@@ -2087,8 +2434,13 @@
     "pk": 67,
     "fields": {
         "action_time": "2016-08-21T07:36:13",
-        "user": 1,
-        "content_type": 13,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "object_id": "3",
         "object_repr": "\u041c\u0430\u0440\u0456\u044f \u041f\u0440\u0438\u0449\u0435\u043f\u043a\u0456\u043d\u0430",
         "action_flag": 1,
@@ -2100,8 +2452,13 @@
     "pk": 68,
     "fields": {
         "action_time": "2016-08-21T07:36:52",
-        "user": 1,
-        "content_type": 13,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "object_id": "4",
         "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0420\u0435\u043d\u043a\u0456\u043d",
         "action_flag": 1,
@@ -2113,8 +2470,13 @@
     "pk": 69,
     "fields": {
         "action_time": "2016-08-21T07:38:10",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "1",
         "object_repr": "\u0424\u0456\u0437\u0438\u043a\u0430 2017-05-24 12:00:00+00:00",
         "action_flag": 1,
@@ -2126,8 +2488,13 @@
     "pk": 70,
     "fields": {
         "action_time": "2016-08-21T07:38:39",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "2",
         "object_repr": "\u0425\u0456\u043c\u0456\u044f 2017-05-30 13:00:00+00:00",
         "action_flag": 1,
@@ -2139,8 +2506,13 @@
     "pk": 71,
     "fields": {
         "action_time": "2016-08-21T10:47:05",
-        "user": 1,
-        "content_type": 11,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "object_id": "3",
         "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430",
         "action_flag": 1,
@@ -2152,8 +2524,13 @@
     "pk": 72,
     "fields": {
         "action_time": "2016-08-21T10:47:32",
-        "user": 1,
-        "content_type": 11,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "object_id": "4",
         "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e",
         "action_flag": 1,
@@ -2165,8 +2542,13 @@
     "pk": 73,
     "fields": {
         "action_time": "2016-08-21T10:48:01",
-        "user": 1,
-        "content_type": 11,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "subject"
+        ],
         "object_id": "5",
         "object_repr": "\u0424\u0456\u043b\u043e\u0441\u043e\u0444\u0456\u044f",
         "action_flag": 1,
@@ -2178,8 +2560,13 @@
     "pk": 74,
     "fields": {
         "action_time": "2016-08-21T10:48:28",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "3",
         "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430 2016-08-21 10:48:23+00:00",
         "action_flag": 1,
@@ -2191,8 +2578,13 @@
     "pk": 75,
     "fields": {
         "action_time": "2016-08-21T10:48:43",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "4",
         "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e 2016-08-21 10:48:40+00:00",
         "action_flag": 1,
@@ -2204,8 +2596,13 @@
     "pk": 76,
     "fields": {
         "action_time": "2016-08-21T10:48:58",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "5",
         "object_repr": "\u0424\u0456\u043b\u043e\u0441\u043e\u0444\u0456\u044f 2016-08-21 10:48:50+00:00",
         "action_flag": 1,
@@ -2217,8 +2614,13 @@
     "pk": 77,
     "fields": {
         "action_time": "2016-08-21T10:49:08",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "6",
         "object_repr": "\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430 2016-08-21 10:49:05+00:00",
         "action_flag": 1,
@@ -2230,8 +2632,13 @@
     "pk": 78,
     "fields": {
         "action_time": "2016-08-21T10:49:20",
-        "user": 1,
-        "content_type": 12,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "exam"
+        ],
         "object_id": "7",
         "object_repr": "\u041c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u043e\u0437\u043d\u0430\u0432\u0441\u0442\u0432\u043e 2016-08-21 10:49:14+00:00",
         "action_flag": 1,
@@ -2243,8 +2650,13 @@
     "pk": 79,
     "fields": {
         "action_time": "2016-08-24T17:12:13",
-        "user": 1,
-        "content_type": 13,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "object_id": "2",
         "object_repr": "\u041a\u043e\u0436\u0435\u0432\u0438\u0439 \u042f\u0440\u043e\u0441\u043b\u0430\u0432",
         "action_flag": 2,
@@ -2256,8 +2668,13 @@
     "pk": 80,
     "fields": {
         "action_time": "2016-08-24T17:12:46",
-        "user": 1,
-        "content_type": 13,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "teacher"
+        ],
         "object_id": "4",
         "object_repr": "\u0420\u0435\u043d\u043a\u0456\u043d \u0410\u043d\u0434\u0440\u0456\u0439",
         "action_flag": 2,
@@ -2269,8 +2686,13 @@
     "pk": 81,
     "fields": {
         "action_time": "2016-08-28T11:14:54",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "20",
         "object_repr": "\u0406\u0432\u0430\u043d \u0424\u0440\u0430\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 509)",
         "action_flag": 1,
@@ -2282,8 +2704,13 @@
     "pk": 82,
     "fields": {
         "action_time": "2016-08-28T11:15:25",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "21",
         "object_repr": "\u041f\u0435\u0442\u0440 \u0421\u043a\u0440\u0438\u043f\u0456\u043d  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 1,
@@ -2295,8 +2722,13 @@
     "pk": 83,
     "fields": {
         "action_time": "2016-08-28T11:15:48",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "22",
         "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 1,
@@ -2308,8 +2740,13 @@
     "pk": 84,
     "fields": {
         "action_time": "2016-08-28T11:35:12",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "22",
         "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2321,8 +2758,13 @@
     "pk": 85,
     "fields": {
         "action_time": "2016-08-28T11:35:28",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "22",
         "object_repr": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u041e\u043d\u0438\u0449\u0435\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2334,8 +2776,13 @@
     "pk": 86,
     "fields": {
         "action_time": "2016-08-28T11:37:20",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "16",
         "object_repr": "Olena Dewis  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2347,8 +2794,13 @@
     "pk": 87,
     "fields": {
         "action_time": "2016-08-28T11:37:42",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "15",
         "object_repr": "Nebo Sune  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
@@ -2360,8 +2812,13 @@
     "pk": 88,
     "fields": {
         "action_time": "2016-08-28T11:37:58",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "14",
         "object_repr": "Curiositi Moon  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
@@ -2373,8 +2830,13 @@
     "pk": 89,
     "fields": {
         "action_time": "2016-08-28T11:38:13",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "9",
         "object_repr": "\u0410\u0410\u043d\u0434\u0440\u0456\u0439 \u0410\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 422)",
         "action_flag": 2,
@@ -2386,8 +2848,13 @@
     "pk": 90,
     "fields": {
         "action_time": "2016-08-28T11:38:37",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "20",
         "object_repr": "\u0406\u0432\u0430\u043d \u0424\u0440\u0430\u043d\u043a\u043e  (\u0413\u0440\u0443\u043f\u0430 509)",
         "action_flag": 2,
@@ -2399,8 +2866,13 @@
     "pk": 91,
     "fields": {
         "action_time": "2016-08-28T11:39:05",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "19",
         "object_repr": "\u0416\u0430\u043d \u0411\u0430\u043b\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2412,8 +2884,13 @@
     "pk": 92,
     "fields": {
         "action_time": "2016-08-28T11:39:34",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "18",
         "object_repr": "\u0404\u0432\u0433\u0435\u043d \u041f\u0435\u0440\u043a\u0456\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
@@ -2425,8 +2902,13 @@
     "pk": 93,
     "fields": {
         "action_time": "2016-08-28T11:40:02",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "13",
         "object_repr": "Tim Sting  (\u0413\u0440\u0443\u043f\u0430 509)",
         "action_flag": 2,
@@ -2438,8 +2920,13 @@
     "pk": 94,
     "fields": {
         "action_time": "2016-08-28T11:40:34",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "12",
         "object_repr": "Wiki Pedija  (\u0413\u0440\u0443\u043f\u0430 509)",
         "action_flag": 2,
@@ -2451,8 +2938,13 @@
     "pk": 95,
     "fields": {
         "action_time": "2016-08-28T11:40:45",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "11",
         "object_repr": "Alex Antoni  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2464,8 +2956,13 @@
     "pk": 96,
     "fields": {
         "action_time": "2016-08-28T11:41:00",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "11",
         "object_repr": "Alex Antoni  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2477,8 +2974,13 @@
     "pk": 97,
     "fields": {
         "action_time": "2016-08-28T11:41:12",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "8",
         "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
@@ -2490,8 +2992,13 @@
     "pk": 98,
     "fields": {
         "action_time": "2016-08-28T11:41:27",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "8",
         "object_repr": "\u042f\u0410\u043d\u0434\u0440\u0456\u0439 \u042f\u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
@@ -2503,8 +3010,13 @@
     "pk": 99,
     "fields": {
         "action_time": "2016-08-28T11:42:26",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "2",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04392 \u0421\u043e\u0440\u043e\u0447\u0430\u043d2  (\u0413\u0440\u0443\u043f\u0430 422)",
         "action_flag": 2,
@@ -2516,8 +3028,13 @@
     "pk": 100,
     "fields": {
         "action_time": "2016-08-28T11:42:36",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "5",
         "object_repr": "\u0410\u041d\u0414\u0420\u0406\u0419 \u0421\u041e\u0420\u041e\u0427\u0410\u041d  (\u0413\u0440\u0443\u043f\u0430 426)",
         "action_flag": 2,
@@ -2529,12 +3046,71 @@
     "pk": 101,
     "fields": {
         "action_time": "2016-08-28T11:43:12",
-        "user": 1,
-        "content_type": 7,
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
         "object_id": "6",
         "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04394 Sorochan4  (\u0413\u0440\u0443\u043f\u0430 406)",
         "action_flag": 2,
         "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2016-08-29T11:55:13",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
+        "object_id": "10",
+        "object_repr": "\u0421\u0435\u0440\u0433\u0456\u0439 \u0412\u0430\u043d\u0456\u043d  (\u0413\u0440\u0443\u043f\u0430 422)",
+        "action_flag": 2,
+        "change_message": "\u0417\u043c\u0456\u043d\u0435\u043d\u043e photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2016-08-29T11:56:11",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
+        "object_id": "3",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u0439 \u0421\u043e\u0440\u043e\u0447\u0430\u043d  (\u0413\u0440\u0443\u043f\u0430 422)",
+        "action_flag": 2,
+        "change_message": "\u0417\u043c\u0456\u043d\u0435\u043d\u043e photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2016-08-29T11:56:54",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ],
+        "object_id": "7",
+        "object_repr": "\u0410\u043d\u0434\u0440\u0456\u04395 Jim  (\u0413\u0440\u0443\u043f\u0430 509)",
+        "action_flag": 2,
+        "change_message": "\u0417\u043c\u0456\u043d\u0435\u043d\u043e photo."
     }
 }
 ]

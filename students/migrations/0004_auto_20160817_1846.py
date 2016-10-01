@@ -64,9 +64,9 @@ class Migration(migrations.Migration):
             name='year',
             field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='students.SchoolYear', verbose_name='Назва навчального року'),
         ),
-        migrations.AddField(
-            model_name='student',
-            name='lectures',
-            field=models.ManyToManyField(db_table='students_lecture_present_students', to='students.Lecture', verbose_name='Відвідувані заннятя'),
-        ),
+#        migrations.AddField(
+#            model_name='student',
+#            name='lectures',
+#            field=models.ManyToManyField(db_table='students_lecture_present_students', to='students.Lecture', verbose_name='Відвідувані заннятя'),
+#        ),
     ]
