@@ -1,4 +1,5 @@
 Django==1.9.7
 Pillow
 mysqlclient
-python-dateutil 
+python-dateutil
+django-crispy-forms==1.6.0

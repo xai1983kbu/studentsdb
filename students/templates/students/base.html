@@ -56,6 +56,7 @@
         {% url 'results' as url5 %}
         {% url 'students_load_more' as url6 %}
         {% url 'students_scroll' as url7 %}
+        {% url 'contact_admin' as url8 %}
 
           <li role="presentation" {% if url1 == request.path or 'students/' in request.path  %} class="active" {% endif %}><a href="{% url "home" %}">Студенти</a></li>
           <li role="presentation" {% if url6 in request.path  %} class="active" {% endif %}><a href="{% url "students_load_more" %}">Студенти L M</a></li>
@@ -64,6 +65,7 @@
           <li role="presentation" {% if url3 in request.path  %} class="active" {% endif %}><a href="{% url "groups" %}">Групи</a></li>
           <li role="presentation" {% if url4 in request.path  %} class="active" {% endif %}><a href="{% url "exams" %}">Екзамени</a></li>
           <li role="presentation" {% if url5 in request.path  %} class="active" {% endif %}><a href="{% url "results" %}">Оцінки</a></li>
+          <li role="presentation" {% if url8 in request.path  %} class="active" {% endif %}><a href="{% url "contact_admin" %}">Контакт</a></li>
         </ul>
       </div>
     </div>

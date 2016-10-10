@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'students', 
 ]
 
@@ -135,3 +138,13 @@ PORTAL_URL = 'http://localhost:8000'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+
+# email settings для Gmail SMTP сервера
+ADMIN_EMAIL = '*******'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = '*******'
+EMAIL_HOST_PASSWORD = '*******'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True

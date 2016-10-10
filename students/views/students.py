@@ -1,12 +1,75 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from students.models.students import Student
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
+
+from django.forms import ModelForm
+from django.views.generic import UpdateView
+from django.views.generic.edit import DeleteView
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+from crispy_forms.bootstrap import FormActions
+
+from ..models import Student, Group
+
+
+class StudentUpdateForm(ModelForm):
+    class Meta:
+        model = Student
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        # set form tag attributes
+        self.helper.form_action = reverse('students_edit',
+            kwargs={'pk': kwargs['instance'].id})
+        self.helper.form_method = 'POST'
+        self.helper.form_class = 'form-horizontal'
+        # set form field properties
+        self.helper.help_text_inline = True
+        self.helper.html5_required = True
+        self.helper.label_class = 'col-sm-2 control-label'
+        self.helper.field_class = 'col-sm-10'
+        # add buttons
+        self.helper.layout[-1] = FormActions(
+            Submit('add_button', 'Зберегти', css_class='btn btn-primary'),
+            Submit('cancel_button', 'Скасувати', css_class='btn btn-link'),)
+
+
+class StudentUpdateView(UpdateView):
+    model = Student
+    #fields = '__all__'
+    template_name_suffix = '_edit'
+    form_class = StudentUpdateForm
+    #template_name = 'students/student_edit.html'
+   
+    def get_success_url(self):
+        return '%s?status_message=Студента успішно збережено' \
+            % reverse('home')
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('cancel_button'):
+            return HttpResponseRedirect(
+                '%s?status_message=Редагування студента відмінено' \
+                % reverse('home'))
+        else:
+            return super().post(request, *args, **kwargs)
+
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    success_url = 'home'
+    template_name_suffix = '_confirm_delete'
+    status_message = 'Студента успішно видалено!'
+
+    def get_success_url(self):
+        return '%s?status_message=%s' % (reverse(self.success_url), self.status_message)
 
 
 # Views for Students
-
 def students_list(request): 
     students = Student.objects.all()
 
@@ -65,9 +128,5 @@ def students_list(request):
                           'combined_page_rage':combined_page_rage})
 
 
-def students_edit(request, sid):
-    return HttpResponse('<h1>Edit Student %s</h1>' % sid)
 
-def students_delete(request, sid):
-    return HttpResponse('<h1>Delete Student %s</h1>' % sid)
 

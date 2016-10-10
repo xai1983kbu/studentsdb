@@ -1,0 +1,24 @@
+{% if is_paginated %}
+<nav>
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li>
+      <a href="{% url "students_list_class_view" %}?page=1">&laquo;</a>
+    </li>
+    {% endif %}
+
+    {% for p in page_obj.paginator.page_range %}
+    <li {% if page_obj.number == p %}class="active"{% endif %}>
+      <a href="{% url "students_list_class_view" %}?page={{ p }}">{{ p }}</a>
+    </li>
+    {% endfor %}
+
+    <li>
+      {% if page_obj.has_next %}
+      <a href="{% url "students_list_class_view" %}?page={{ page_obj.next_page_number }}">&raquo;</a>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+{% endif %}
+

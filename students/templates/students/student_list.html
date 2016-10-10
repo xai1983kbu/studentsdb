@@ -1,0 +1,18 @@
+{% extends "students/base.html" %}
+
+{% block content %}
+
+<h2>Студенти</h2>
+
+<ul>
+{% for student in students %}
+    <li>{{ student.last_name }}</li>
+{% endfor %}
+</ul>
+
+{% include "students/pagination/pagination_students_class_view.html" %}
+
+<h2>{{show_logo}}</h2>
+
+
+{% endblock content %}
