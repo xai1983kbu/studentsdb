@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
+
+from datetime import datetime
+from PIL import Image
+
 from students.models.students import Student
 from students.models.groups import Group
-from django.core.urlresolvers import reverse
-from datetime import datetime
+
 
 def students_add(request):
     # Якщо форма була запощена:
@@ -60,9 +64,27 @@ def students_add(request):
                     data['student_group'] = groups[0]
 
             photo = request.FILES.get('photo')
+            # import pdb; pdb.set_trace();
+            # Перелік дозволених форматів(розширень файлу) для фото
+            FORMAT_PHOTO = ('jpg', 'jpeg', 'png', 'bmp') 
+            SIZE_PHOTO = 2048*1000 # 2MB - граничний розмір для фото 
             if photo:
-                data['photo'] = photo 
-
+                # Користуюся пакетом PIL для відсіювання файлів які не є фото 
+                try:
+                    im=Image.open(photo) 
+                except IOError:
+                    errors['photo'] = "Це повино бути фото, наприклад файли з розширеням %s" \
+                                    % ", ".join(FORMAT_PHOTO)
+                # Перевіряю чи файл з розширенням яке вказано в переліку дозволених
+                if photo.content_type.split('/')[1] not in FORMAT_PHOTO: 
+                    errors['photo'] = "Фото повино бути одного з цих форматів: %s" \
+                                     % ", ".join(FORMAT_PHOTO)
+                # Перевіряю чи розмір файл не перевищю дозволеного  
+                if photo.size >SIZE_PHOTO:
+                    errors['photo'] = "Розмір фото повинен бути менший за 2 мегабайти"
+            elif not errors['photo']:
+                data['photo'] = photo
+            
             #зберігаємо студента
             # Якщо дані були введені коректно:
             if not errors:
