@@ -2,7 +2,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from io import BytesIO
 from datetime import datetime
 from PIL import Image
 
@@ -63,28 +64,35 @@ def students_add(request):
                 else:
                     data['student_group'] = groups[0]
 
-            photo = request.FILES.get('photo')
-            # import pdb; pdb.set_trace();
-            # Перелік дозволених форматів(розширень файлу) для фото
+            photo = request.FILES.get('photo') # об*єкт класу InMemoryUploadedFile
             FORMAT_PHOTO = ('jpg', 'jpeg', 'png', 'bmp') 
-            SIZE_PHOTO = 2048*1000 # 2MB - граничний розмір для фото 
+            SIZE_PHOTO = 10 # 10MB - граничний розмір для фото
+            SIZE_THUMNAIL = (500, 500)
+            # Перевіряю на допустимий розмір файла
+            if photo.size >SIZE_PHOTO*1024*1000:
+                errors['photo'] = "".join(["Розмір фото не повинен перевищувати ", str(SIZE_PHOTO), " мегабайт"])
+                photo = None
             if photo:
                 # Користуюся пакетом PIL для відсіювання файлів які не є фото 
-                try:
-                    im=Image.open(photo) 
+                try:          
+                    img = Image.open(photo)
+                    img.thumbnail(SIZE_THUMNAIL, Image.ANTIALIAS)
+                    thumb_io = BytesIO()
+                    _format = photo.content_type.split('/')[1]
+                    img.save(thumb_io, _format)
+                    # Ініціалізатор для InMemoryUploadedFile, дивись 
+                    # /data/work/virtualenv3/studentsdb/lib/python3.4/site-packages/django/core/files/uploadedfile.py
+                    # __init__(self, file, field_name, name, content_type, size, charset, content_type_extra=None):
+                    _file = thumb_io
+                    field_name = photo.field_name
+                    name = "".join([datetime.now().strftime("%Y-%m-%d %H-%M-%S"),".", _format])
+                    content_type = photo.content_type
+                    im = InMemoryUploadedFile(_file, field_name, name, content_type, size=None, charset=None)
+                    data['photo'] = im
+                    #qimport pdb; pdb.set_trace();
                 except IOError:
                     errors['photo'] = "Це повино бути фото, наприклад файли з розширеням %s" \
                                     % ", ".join(FORMAT_PHOTO)
-                # Перевіряю чи файл з розширенням яке вказано в переліку дозволених
-                if photo.content_type.split('/')[1] not in FORMAT_PHOTO: 
-                    errors['photo'] = "Фото повино бути одного з цих форматів: %s" \
-                                     % ", ".join(FORMAT_PHOTO)
-                # Перевіряю чи розмір файл не перевищю дозволеного  
-                if photo.size >SIZE_PHOTO:
-                    errors['photo'] = "Розмір фото повинен бути менший за 2 мегабайти"
-            elif not errors['photo']:
-                data['photo'] = photo
-            
             #зберігаємо студента
             # Якщо дані були введені коректно:
             if not errors:

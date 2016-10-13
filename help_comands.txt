@@ -1,0 +1,8 @@
+видалити базу mysql
+http://stackoverflow.com/questions/25244606/completely-remove-mysql-ubuntu-14-04-lts
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo apt-get autoremove
+sudo apt-get autoclean
+
+подивитися що встановлено в віртуальному середовищі
+pip freeze
