@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.contrib import messages
+
 from io import BytesIO
 from datetime import datetime
 from PIL import Image
@@ -100,11 +102,11 @@ def students_add(request):
                 #create student object
                 student = Student(**data)
                 student.save()
-                import pdb; pdb.set_trace();
+                #import pdb; pdb.set_trace();
                 # Повертаємо користувача до списку студентів
                 # redirect user to students_list
-                return HttpResponseRedirect('%s?status_message=Студента %s успішно додано!' \
-                                            % (reverse('home'), 777))
+                messages.success(request, 'Студента %s успішно додано!' % student)
+                return HttpResponseRedirect(reverse('home'))
             # Якщо дані були введені некоректно:
             else:
                 # Віддаємо шаблон форми разом із знайденими помилками
@@ -116,8 +118,8 @@ def students_add(request):
         elif request.POST.get('cancel_button') is not None:
             #Повертаємо користувача до списку студентів
             #redirect to home page on cancel button
-            return HttpResponseRedirect('%s?status_message=Додавання студента скасовано!' %
-reverse('home'))
+            messages.warning('Додавання студента скасовано!')
+            return HttpResponseRedirect(reverse('home'))
     # Якщо форма не була запощена:       
     else:
         # initial form render
