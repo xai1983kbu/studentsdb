@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from studentsdb.settings import ADMIN_EMAIL
+from django.contrib import messages
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -59,14 +60,18 @@ def contact_admin(request):
             try:
                 send_mail(subject, message, from_email, [ADMIN_EMAIL])
             except Exception:
-                message = u'Під час відправки листа виникла непередбачувана ' \
-                    u'помилка. Спробуйте скористатись даною формою пізніше.'
+                messages.warning(request, 'Під час відправки листа виникла '  
+                                          'непередбачувана помилка. Спробуйте '
+                                          'скористатись даною формою пізніше.')
             else:
-                message = u'Повідомлення успішно надіслане!'
-
+                messages.warning(request,'Попереднє непотрідне повідомлення')
+                storage = messages.get_messages(request)
+                for message in storage:
+                    pass
+                #storage.used = False
+                messages.success(request,'Повідомлення успішно надіслане!')
             # redirect to same contact page with success message
-            return HttpResponseRedirect(
-                u'%s?status_message=%s' % (reverse('contact_admin'), message))
+            return HttpResponseRedirect(reverse('contact_admin'))
 
     # if there was not POST render blank form
     else:

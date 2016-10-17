@@ -89,7 +89,7 @@ def students_add(request):
                     content_type = photo.content_type
                     im = InMemoryUploadedFile(_file, field_name, name, content_type, size=None, charset=None)
                     data['photo'] = im
-                    #qimport pdb; pdb.set_trace();
+                    #import pdb; pdb.set_trace();
                 except IOError:
                     errors['photo'] = "Це повино бути фото, наприклад файли з розширеням %s" \
                                     % ", ".join(FORMAT_PHOTO)
@@ -100,10 +100,11 @@ def students_add(request):
                 #create student object
                 student = Student(**data)
                 student.save()
+                import pdb; pdb.set_trace();
                 # Повертаємо користувача до списку студентів
                 # redirect user to students_list
-                return HttpResponseRedirect('%s?status_message=Студента успішно додано!' %
-reverse('home'))
+                return HttpResponseRedirect('%s?status_message=Студента %s успішно додано!' \
+                                            % (reverse('home'), 777))
             # Якщо дані були введені некоректно:
             else:
                 # Віддаємо шаблон форми разом із знайденими помилками
