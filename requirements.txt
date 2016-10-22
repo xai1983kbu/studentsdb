@@ -3,3 +3,4 @@ Pillow
 mysqlclient
 python-dateutil
 django-crispy-forms==1.6.0
+django-contact-form

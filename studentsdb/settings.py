@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'crispy_forms',
-    'students', 
+    'students',
+    'contact', 
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -148,3 +150,10 @@ EMAIL_HOST_USER = 'xai1983kbu@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+
+
+# for django contact-form 
+SITE_ID = 1
+DEFAULT_FROM_EMAIL = 'xai1983kbu@gmail.com'
+MANAGERS = [('my','xai_kbu@ukr.net'), ('my2','xai_kbu@i.ua')]
+

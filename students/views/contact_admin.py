@@ -65,10 +65,8 @@ def contact_admin(request):
                                           'скористатись даною формою пізніше.')
             else:
                 messages.warning(request,'Попереднє непотрідне повідомлення')
-                storage = messages.get_messages(request)
-                for message in storage:
-                    pass
-                #storage.used = False
+                list(messages.get_messages(request))
+                #import pdb; pdb.set_trace();
                 messages.success(request,'Повідомлення успішно надіслане!')
             # redirect to same contact page with success message
             return HttpResponseRedirect(reverse('contact_admin'))

@@ -118,7 +118,7 @@ def students_add(request):
         elif request.POST.get('cancel_button') is not None:
             #Повертаємо користувача до списку студентів
             #redirect to home page on cancel button
-            messages.warning('Додавання студента скасовано!')
+            messages.warning(request, 'Додавання студента скасовано!')
             return HttpResponseRedirect(reverse('home'))
     # Якщо форма не була запощена:       
     else:
