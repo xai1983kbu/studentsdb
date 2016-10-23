@@ -3,10 +3,12 @@ from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib import messages
 
 from django.forms import ModelForm
 from django.views.generic import UpdateView
 from django.views.generic.edit import DeleteView
+from django.views.generic import ListView
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -50,6 +52,7 @@ class StudentUpdateView(UpdateView):
         return '%s?status_message=Студента успішно збережено' \
             % reverse('home')
 
+
     def post(self, request, *args, **kwargs):
         if request.POST.get('cancel_button'):
             return HttpResponseRedirect(
@@ -63,10 +66,57 @@ class StudentDeleteView(DeleteView):
     model = Student
     success_url = 'home'
     template_name_suffix = '_confirm_delete'
-    status_message = 'Студента успішно видалено!'
+    success_message = "Студента %s успішно видалено!"
+
+    #http://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message \
+                         % self.model.objects.filter(pk=kwargs['pk'])[0].__str__())
+        #import pdb; pdb.set_trace();
+        return super(StudentDeleteView, self).delete(request, *args, **kwargs)
 
     def get_success_url(self):
-        return '%s?status_message=%s' % (reverse(self.success_url), self.status_message)
+        return reverse(self.success_url)
+
+
+class ManyStudentDeleteView(DeleteView):
+    model = Student
+    success_url = 'students_scroll'
+    template_name_suffix = '_confirm_many_delete'
+    success_message = "Студента %s успішно видалено!"
+    context_object_name = 'list_objects_of_model'
+    success_message = 'Студентів успішно видалено!'
+    cancel_message = 'Видалення студентів відмінено!'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        list_id_of_students = self.request.GET.getlist('delete_list')
+        #import pdb; pdb.set_trace();
+        return qs.filter(id__in=list_id_of_students)
+
+    # перевизначаю 'get_object' з /lib/python3.4/site-packages/django/views/generic/detail.py
+    # щоб не було помилки 'must be called with either an object -pk or a slug'
+    # obj передається в 'student_confirm_many_delete.html' під псевдонімом 'list_objects_of_model'
+    def get_object(self, queryset=None):
+        obj = self.get_queryset()
+        return obj
+
+    def delete(self, request, *args, **kwargs):
+        if self.request.POST.get('delete_button') is not None:
+            list_id_of_students = request.POST.getlist('delete_list')
+            self.model.objects.filter(id__in=list_id_of_students).delete()
+        success_url = self.get_success_url()
+        #import pdb; pdb.set_trace();
+        return HttpResponseRedirect(success_url)
+
+    def get_success_url(self):
+        #import pdb; pdb.set_trace()
+        list(messages.get_messages(self.request))
+        if self.request.POST.get('cancel_button') is not None:
+            messages.warning(self.request, self.cancel_message)
+        if self.request.POST.get('delete_button') is not None:
+            messages.success(self.request, self.success_message) 
+        return reverse(self.success_url)
 
 
 # Views for Students

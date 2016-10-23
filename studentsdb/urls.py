@@ -3,6 +3,7 @@ from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 from students.views.students_class_view import StudentList
 from students.views.students import StudentUpdateView, StudentDeleteView
+from students.views.students import ManyStudentDeleteView
 
 from students.models.groups import Group
 
@@ -12,6 +13,7 @@ urlpatterns = [
     url(r'^students/add/?$','students.views.students_add.students_add', name='students_add'),
     url(r'^students/(?P<pk>[0-9]+)/edit/?$',StudentUpdateView.as_view(), name='students_edit'),
     url(r'^students/(?P<pk>[0-9]+)/delete/?$',StudentDeleteView.as_view(), name='students_delete'),
+    url(r'^students/manydelete/?$',ManyStudentDeleteView.as_view(), name='many_students_delete'),
     url(r'^students_list/$',StudentList.as_view(), name='students_list_class_view'), # з використанням класу в'юшки 
 
     # Students Load More urls
@@ -24,7 +26,7 @@ urlpatterns = [
     url(r'^groups/add/?$','students.views.groups.groups_add', name='groups_add'),
     url(r'^groups/(?P<gid>[0-9]+)/edit/?$','students.views.groups.groups_edit', name='groups_edit'),
     url(r'^groups/(?P<pk>[0-9]+)/delete/?$',StudentDeleteView.as_view( \
-        model=Group, success_url='groups', status_message='Групу успішно видалено!'), name='groups_delete'),
+        model=Group, success_url='groups', success_message='Групу %s успішно видалено!'), name='groups_delete'),
 
     # Journal urls
     url(r'^journal/$','students.views.journal.journal', name='journal'),

@@ -1,0 +1,32 @@
+{% extends 'students/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Видалити Вибраних Студентів{% endblock meta_title %}
+
+{% block title %}Видалити Вибраних Студентів{% endblock title %}
+
+{% block content %}
+
+<form action="{% url 'many_students_delete' %}" method="POST">
+    {% csrf_token %} 
+    <p class="bg-danger">Ви дійсно хочете видалити наступних студентів?</p>
+        {% for student in list_objects_of_model %}
+          <ul>
+            {% if student.photo %}
+                <img src="{{ student.photo.url }}"  class="img-circle" height="30" width="30"/>
+            {% elif not student.photo %}
+                <img src="{% static 'img/no_photo.jpg' %}" class="img-circle" height="30" width="30"/>
+            {% endif %}
+              {{ student.last_name }}  {{ student.first_name }}
+
+                <input type = "hidden" name="delete_list" value="{{student.id}}"></input>
+          </ul>
+        {% endfor %}
+    <input type="submit" value="Підтвердити" name="delete_button"
+           class="btn btn-danger" />
+    <input type="submit" value="Відмінити" name="cancel_button"
+           class="btn btn-link" /> <br/><br/>
+</form>
+{% endblock content %}
+
