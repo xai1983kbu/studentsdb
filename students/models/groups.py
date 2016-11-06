@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Group(models.Model):
     """Group Model"""
@@ -23,6 +24,15 @@ class Group(models.Model):
     notes = models.TextField(
         blank = True,
         verbose_name = "Додаткові нотатки")
+
+    def clean(self):
+        if self.title is not None:
+            group = Group.objects.filter(title = self.title)
+            if self.leader is not None and self.leader.student_group not in group:
+                raise ValidationError({'leader': 'Цей студент не з цієї групи! '
+                          'Обрати можна тільки студента з групи %s' % self.title}
+                      )
+        #import pdb; pdb.set_trace()
 
     
     def __str__(self):

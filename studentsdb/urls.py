@@ -1,10 +1,11 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
+
 from students.views.students_class_view import StudentList
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.students import ManyStudentDeleteView
-
+from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
 from students.models.groups import Group
 
 urlpatterns = [
@@ -22,11 +23,14 @@ urlpatterns = [
     url(r'^students_scroll/?$','students.views.homeworks.students_scroll.students_scroll', name='students_scroll'),
 
     # Groups urls
+  # url(r'^groups/(?P<pk>[0-9]+)/delete/?$',StudentDeleteView.as_view( \
+  #     model=Group, success_url='groups', success_message='Групу %s успішно видалено!'), name='groups_delete'),
     url(r'^groups/$', 'students.views.groups.groups_list', name='groups'),
-    url(r'^groups/add/?$','students.views.groups.groups_add', name='groups_add'),
-    url(r'^groups/(?P<gid>[0-9]+)/edit/?$','students.views.groups.groups_edit', name='groups_edit'),
-    url(r'^groups/(?P<pk>[0-9]+)/delete/?$',StudentDeleteView.as_view( \
-        model=Group, success_url='groups', success_message='Групу %s успішно видалено!'), name='groups_delete'),
+    url(r'^groups/add/$', GroupAddView.as_view(), name='groups_add'),
+    url(r'^groups/(?P<pk>\d+)/edit/$', GroupUpdateView.as_view(),
+         name='groups_edit'),
+    url(r'^groups/(?P<pk>\d+)/delete/$', GroupDeleteView.as_view(),
+         name='groups_delete'),
 
     # Journal urls
     url(r'^journal/$','students.views.journal.journal', name='journal'),

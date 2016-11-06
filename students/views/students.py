@@ -36,9 +36,10 @@ class StudentUpdateForm(ModelForm):
         self.helper.label_class = 'col-sm-2 control-label'
         self.helper.field_class = 'col-sm-10'
         # add buttons
-        self.helper.layout[-1] = FormActions(
+        self.helper.layout.fields.append(FormActions(
             Submit('add_button', 'Зберегти', css_class='btn btn-primary'),
             Submit('cancel_button', 'Скасувати', css_class='btn btn-link'),)
+        )
 
 
 class StudentUpdateView(UpdateView):
@@ -47,17 +48,27 @@ class StudentUpdateView(UpdateView):
     template_name_suffix = '_edit'
     form_class = StudentUpdateForm
     #template_name = 'students/student_edit.html'
-   
+    success_url = 'home'
+    success_message = 'Студента {} успішно збережено!'
+    cancel_message = 'Редагування студента {} відмінено!'   
     def get_success_url(self):
-        return '%s?status_message=Студента успішно збережено' \
-            % reverse('home')
-
+        student = self.model.objects.filter(id=self.kwargs['pk'])
+        if student:
+            student = student.get()
+        list(messages.get_messages(self.request))
+        messages.success(self.request, self.success_message.format(student))
+        #import pdb; pdb.set_trace()
+        return reverse(self.success_url)
 
     def post(self, request, *args, **kwargs):
+        #import pdb; pdb.set_trace()
+        student = self.model.objects.filter(id=self.kwargs['pk'])
+        if student:
+            student = student.get()
         if request.POST.get('cancel_button'):
-            return HttpResponseRedirect(
-                '%s?status_message=Редагування студента відмінено' \
-                % reverse('home'))
+            list(messages.get_messages(self.request))
+            messages.warning(self.request, self.cancel_message.format(student))
+            return HttpResponseRedirect(reverse(self.success_url))
         else:
             return super().post(request, *args, **kwargs)
 
@@ -72,7 +83,7 @@ class StudentDeleteView(DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message \
                          % self.model.objects.filter(pk=kwargs['pk'])[0].__str__())
-        #import pdb; pdb.set_trace();
+        #import pdb; pdb.set_trace()
         return super(StudentDeleteView, self).delete(request, *args, **kwargs)
 
     def get_success_url(self):
