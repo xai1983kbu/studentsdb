@@ -52,8 +52,9 @@ urlpatterns = [
     # Contact
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
     url(r'', include('contact.urls')),
-
-    url(r'^admin/', admin.site.urls),
+    
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^myadmin/', admin.site.urls),
 
 
 ]

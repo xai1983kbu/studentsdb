@@ -6,3 +6,9 @@ sudo apt-get autoclean
 
 подивитися що встановлено в віртуальному середовищі
 pip freeze
+pip list
+
+http://askubuntu.com/questions/616075/how-to-install-visual-studio-code-on-ubuntu
+sudo ln -s /path/to/VSCode/code /usr/local/bin/code
+
+

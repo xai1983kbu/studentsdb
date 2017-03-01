@@ -10,6 +10,8 @@ from students.models.subjects import Subject
 from students.models.schoolyears import SchoolYear
 from students.models.exams import Exam
 from students.models.teachers import Teacher
+from students.models.monthjournal import MonthJournal
+
 
 
 class StudentFormAdmin(ModelForm):
@@ -78,3 +80,4 @@ admin.site.register(Subject)
 admin.site.register(SchoolYear)
 admin.site.register(Exam)
 admin.site.register(Teacher)
+admin.site.register(MonthJournal)
