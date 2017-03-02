@@ -7,6 +7,7 @@ from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.students import ManyStudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
 from students.models.groups import Group
+from students.views.journal import JournalView
 
 urlpatterns = [
     # Students urls
@@ -33,10 +34,7 @@ urlpatterns = [
          name='groups_delete'),
 
     # Journal urls
-    url(r'^journal/$','students.views.journal.journal', name='journal'),
-    url(r'^journal/(?P<year>[0-9]+)/(?P<month>[0-9]+)/?$','students.views.journal.journal', name='journal_year_month'),
-    url(r'^journal/(?P<sid>[0-9]+)/?$','students.views.journal.journal_student', name='journal_student'),
-    url(r'^ajax_post/?$','students.views.journal.ajax'),
+    url(r'^journal/$',JournalView.as_view(), name='journal'),
 
     # Exams urls
     url(r'^exams/$','students.views.exams.exams_list', name='exams'),

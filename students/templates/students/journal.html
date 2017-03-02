@@ -1,0 +1,52 @@
+{% extends 'students/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+{% block content %}
+
+{% if not students %}
+
+<div class="alert alert-warning">Поки немає студентів. Додайте будь ласка їх спочатку.</div>
+
+{% else %}
+<p class="text-center">
+  <a href="?month={{ prev_month }}" title="Попередній Місяць">&larr;</a>
+  <string>{{ month }} {{ year }}</strong>
+  <a href="?month={{ next_month }}" title="Наступний Місяць">&rarr;</a>
+</p>
+
+<table class="table table-striped table-hover table-bordered" id="journal-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Студент</th>
+      {% for day in days %}
+      <th>
+        {{ day.verbose_name }}
+        </br>
+        {{ day.day }}
+      </th>
+      {% endfor %}
+    </tr> 
+  </thead>
+  <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+	<td><a href="{{ student.update_url }}">{{ student.fullname }}</td>
+	{% for day in student.days %}
+	<td>
+	  <input type="Checkbox" value="1" {% if day.present %} checked="checked" {% endif %} />
+	</td>
+	{% endfor %}      
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% endblock content %}

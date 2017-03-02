@@ -31,3 +31,9 @@ input {
   max-width: 300px;
 }
 
+/* Journal Style */
+#journal-table td,
+#journal-table th {
+  padding: 4px;
+  text-align: center;
+}
