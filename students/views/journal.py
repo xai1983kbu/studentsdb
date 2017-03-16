@@ -2,6 +2,7 @@ from datetime import date, datetime
 from calendar import monthrange, weekday, weekheader
 from dateutil.relativedelta import relativedelta
 
+from django.http import JsonResponse
 from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 from ..models import Student, MonthJournal
@@ -50,16 +51,12 @@ class JournalView(TemplateView):
             except:
                 journal = None
             
-            days = []
-                               
-            days = [{'present': journal and getattr(journal, 'present_day%d' % day) or False}
-                    for day in range(1, monthrange(month.year, month.month)[1]+1) ]
-
             students.append({
 		          'id': student.id,
 		          'fullname':'%s %s' % (student.last_name, student.first_name),
 		          'update_url': update_url,
-		          'days': tuple([{'present': journal and getattr(journal, 'present_day%d' % day) or False}
+		          'days': tuple([{'present': journal and getattr(journal, 'present_day%d' % day) or False,
+                                  'date': date(month.year, month.month, day).strftime('%Y-%m-%d') }
                               for day in range(1, monthrange(month.year, month.month)[1]+1) ])
 		        },       
 		    )
@@ -67,3 +64,18 @@ class JournalView(TemplateView):
         context['students'] = tuple(students)
   
         return context
+
+    def post(self, request, *args, **kwargs):
+        data = request.POST
+        
+        current_date = datetime.strptime(data['date'], '%Y-%m-%d').date()
+        month = date(current_date.year, current_date.month, 1)
+        student = Student.objects.get(pk=data['student_id'])
+        present = data['present'] == '1' and True or False
+       
+        # get and update journal object
+        journal = MonthJournal.objects.get_or_create(student=student, date=month)[0]
+        setattr(journal, 'present_day%d' % current_date.day, present)
+        journal.save()
+
+        return JsonResponse({'status': 'success'})

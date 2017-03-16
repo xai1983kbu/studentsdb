@@ -34,15 +34,21 @@
     </tr> 
   </thead>
   <tbody>
+      
+      {% csrf_token %}
+
       {% for student in students %}
       <tr>
         <td>{{ forloop.counter }}</td>
-	<td><a href="{{ student.update_url }}">{{ student.fullname }}</td>
-	{% for day in student.days %}
-	<td>
-	  <input type="Checkbox" value="1" {% if day.present %} checked="checked" {% endif %} />
-	</td>
-	{% endfor %}      
+	      <td><a href="{{ student.update_url }}">{{ student.fullname }}</td>
+	      {% for day in student.days %}
+	      <td>
+	        <input type="Checkbox" value="1" {% if day.present %} checked="checked" {% endif %} 
+                 data-student_id="{{ student.id }}" data-date="{{ day.date }}"
+                 data-url="{{ student.update_url }}"
+                 />
+	      </td>
+	    {% endfor %}      
       </tr>
       {% endfor %}
   </tbody>
