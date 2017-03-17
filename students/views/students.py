@@ -15,6 +15,7 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
+from ..util import get_current_group
 
 
 class StudentUpdateForm(ModelForm):
@@ -131,8 +132,13 @@ class ManyStudentDeleteView(DeleteView):
 
 
 # Views for Students
-def students_list(request): 
-    students = Student.objects.all()
+def students_list(request):
+
+    current_group = get_current_group(request)
+    if current_group:
+        students = Student.objects.filter(student_group=current_group)
+    else:
+        students = Student.objects.all()
 
     if request.get_full_path() == "/":
         #redirect request.GET on its copy(deep copy) which I will amend

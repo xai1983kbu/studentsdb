@@ -12,16 +12,6 @@
       </div>
 {% endblock logo %}
 
-{% block menu_group %}
-      <div class="col-xs-4" id="group-select">
-        <strong>Група</strong>
-        <select>
-          <option value="">Усі студенти </option>
-          <option value="">203, Назаренко </option>
-          <option value="">219, Могилевцев </option>
-        </select>
-      </div>
-{% endblock menu_group %}
 
 {% block content %}
         <a href="{% url "students_add" %}" class="btn btn-primary">Додати студента</a>
