@@ -11,58 +11,81 @@ class JournalView(TemplateView):
     template_name = 'students/journal.html'
 
     def get_context_data(self, **kwargs):
+        # get context data from TemplateView class
         context = super(JournalView, self).get_context_data(**kwargs)
-        
-        if self.request.GET.get('month'):
-            month = datetime.strptime(self.request.GET['month'], '%Y-%m-%d').date()
-        else:
-            today = datetime.today()
-            month = date(today.year, today.month, 1)
 
-        context['month'] = month.strftime('%B')
-        context['year'] = month.year
+        # перевіряємо чи передали нам місяць в параметрі,
+        # якщо ні - вичисляємо поточний;
+        # поки що ми віддаємо лише поточний:
+        today = datetime.today()
+        month = date(today.year, today.month, 1)
 
-        prev_month = month - relativedelta(months=1)
-        next_month = month + relativedelta(months=1)
-        context['prev_month'] = prev_month.strftime('%Y-%m-%d')
-        context['next_month'] = next_month.strftime('%Y-%m-%d')
+        # обчислюємо поточний рік, попередній і наступний місяці
+        # а поки прибиваємо їх статично:
+        context['prev_month'] = '2017-02-01'
+        context['next_mont'] = '2017-04-01'
+        context['year'] = 2014
 
-        days = []
-        weekdays = weekheader(2).split(' ')
-        for day in range(1, monthrange(month.year, month.month)[1]+1):
-            days.append({
-                'verbose_name': weekdays[weekday(month.year, month.month, day)],
-                'day': day,
-            })
+        # також поточний місяць;
+        # змінну cur_month ми використовуватимо пізніше
+        # в пагінації; a month_verbose в
+        # навігації помісячній:
+        context['cur_month'] = '2017-03-01'
+        context['month_verbose'] = 'Липень'
 
-        context['days'] = tuple(days)
-        
+        #
+        #
+        context['month_header'] = [
+            {'day': 1, 'verbose': 'Пн'},
+            {'day': 2, 'verbose': 'Вт'},
+            {'day': 3, 'verbose': 'Ср'},
+            {'day': 4, 'verbose': 'Чт'},
+            {'day': 5, 'verbose': 'Пт'}
+        ]
+
+        # витягуемо усіх студентів посортованих по
+        queryset = Student.objects.order_by('last_name')
+
+        # це адреса посту AJAX запиту, як бачите, ми
+        # робитимемо його на цю ж в'юшку; в'юшка журналу
+        # буде і показувати журнал і обслуговувати запити
+        # типу пост на оновлення журналу;
         update_url = reverse('journal')
- 
-        queryset = Student.objects.all().order_by('last_name')
-        
+
+        # пробігаємося по усіх студентах і збираємо
+        # необхідні дані:
         students = []
         for student in queryset:
-            #if student.id == 70:
-            #    import pdb; pdb.set_trace()
-            
-            try:
-                journal = MonthJournal.objects.get(student=student, date=month) 
-            except:
-                journal = None
-            
+            # TODO: витягуємо журнал для студента і
+            #       вибраного місяця
+
+            # набиваємо дні для студента
+            days = []
+            for day in range(1,31):
+                days.append({
+                    'day': day,
+                    'present': True,
+                    'date': date(2017, 3, day).strftime(
+                        '%Y-%m-%d'),
+                })
+
+            # набиваем усі решту даних студента
             students.append({
-		          'id': student.id,
-		          'fullname':'%s %s' % (student.last_name, student.first_name),
-		          'update_url': update_url,
-		          'days': tuple([{'present': journal and getattr(journal, 'present_day%d' % day) or False,
-                                  'date': date(month.year, month.month, day).strftime('%Y-%m-%d') }
-                              for day in range(1, monthrange(month.year, month.month)[1]+1) ])
-		        },       
-		    )
-        
-        context['students'] = tuple(students)
-  
+                'fullname': '%s %s' % (student.last_name, student.first_name),
+                'days': days,
+                'id': student.id,
+                'update_url': update_url,
+            })
+
+            #import pdb;
+            #pdb.set_trace();
+            # застосовуємо пагінацію по списку студентів
+            # context = paginate(students, 10, self.request, context,
+            #                   var_name='students')
+
+            # повертаємо оновлений словник із даними
+            context['students'] = students
+
         return context
 
     def post(self, request, *args, **kwargs):
