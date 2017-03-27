@@ -1,31 +1,36 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Group
+def paginate(objects, size, request, context, var_name='object_list'):
+    """Paginate objects provided by view.
 
-def get_groups(request):
-    current_group = get_current_group(request)
-    
-    groups = []
-    for group in Group.objects.order_by('title'):
-        groups.append({
-            'id':group.id,
-            'title': group.title,
-            'leader': group.leader and '%s %s' % (group.leader.first_name, group.leader.last_name) or None,
-            'selected': current_group and current_group.id == group.id and True or False,
-        })
-    #import pdb; pdb.set_trace()
+This function takes:
+    * list of elements;
+    * number of objects per page;
+    * request object to get url parameters from;
+    * context to set new variables into;
+    * var_name - variable name for list of objects.
 
-    return groups
+In returns updated context object.
+    """
+    # apply pagination
+    paginator = Paginator(objects, size)
 
+    # try to get page number from request
+    page = request.GET.get('page', '1')
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer, deliver first page
+        object_list = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range (e.g. 9999),
+        # deliver last page of results
+        object_list = paginator.page(paginator.num_pages)
 
-def get_current_group(request):
-    current_group = request.COOKIES.get('current_group')
+    # set variables into context
+    context[var_name] = object_list
+    context['is_paginate'] = object_list.has_other_pages()
+    context['page_obj'] = object_list
+    context['paginator'] = paginator
 
-    if current_group:
-        try:
-            group = Group.objects.get(pk=int(current_group))
-        except Group.DoesNotExist:
-            return None
-    else:
-        group = None
-
-    return group
+    return context

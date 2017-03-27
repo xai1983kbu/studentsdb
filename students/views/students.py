@@ -15,7 +15,6 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
-from ..util import get_current_group
 
 
 class StudentUpdateForm(ModelForm):
@@ -133,12 +132,7 @@ class ManyStudentDeleteView(DeleteView):
 
 # Views for Students
 def students_list(request):
-
-    current_group = get_current_group(request)
-    if current_group:
-        students = Student.objects.filter(student_group=current_group)
-    else:
-        students = Student.objects.all()
+    students = Student.objects.all()
 
     if request.get_full_path() == "/":
         #redirect request.GET on its copy(deep copy) which I will amend
@@ -193,7 +187,3 @@ def students_list(request):
     combined_page_rage = [{'num_in_cadre':i,'num_in_document':k} for i,k in zip(page_range_in_cadre,page_range_in_document)] 
     return render(request,'students/students_list.html',{'students':students, 'cadres_set':cadres_set,
                           'combined_page_rage':combined_page_rage})
-
-
-
-

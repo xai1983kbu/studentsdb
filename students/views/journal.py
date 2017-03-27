@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 
 from ..models import MonthJournal, Student
-# from ..util import paginate
+from ..util import paginate
 
 
 class JournalView(TemplateView):
@@ -85,14 +85,11 @@ class JournalView(TemplateView):
                 'update_url': update_url,
             })
 
-        context['students'] = students
 
 
-        # import pdb
-        # pdb.set_trace()
         # apply pagination, 10 students per page
-        # context = paginate(students, 10, self.request, context,
-        #                   var_name='students')
+        context = paginate(students, 10, self.request, context,
+                           var_name='students')
 
         # finnally return update context
         # with paginated students
