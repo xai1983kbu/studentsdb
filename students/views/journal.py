@@ -1,11 +1,15 @@
-from datetime import date, datetime
-from calendar import monthrange, weekday, weekheader
-from dateutil.relativedelta import relativedelta
 
-from django.http import JsonResponse
+
+from datetime import datetime, date
+from dateutil.relativedelta import relativedelta
+from calendar import monthrange, weekday, day_abbr
+
 from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
-from ..models import Student, MonthJournal
+
+from ..models import MonthJournal, Student
+# from ..util import paginate
+
 
 class JournalView(TemplateView):
     template_name = 'students/journal.html'
@@ -14,62 +18,66 @@ class JournalView(TemplateView):
         # get context data from TemplateView class
         context = super(JournalView, self).get_context_data(**kwargs)
 
-        # перевіряємо чи передали нам місяць в параметрі,
-        # якщо ні - вичисляємо поточний;
-        # поки що ми віддаємо лише поточний:
-        today = datetime.today()
-        month = date(today.year, today.month, 1)
+        # check if we need to display some specific month
+        if self.request.GET.get('month'):
+            month = datetime.strptime(self.request.GET['month'], '%Y-%m-%d'
+                                      ).date()
+        else:
+            # otherwise just displaying current data
+            today = datetime.today()
+            month = date(today.year, today.month, 1)
 
-        # обчислюємо поточний рік, попередній і наступний місяці
-        # а поки прибиваємо їх статично:
-        context['prev_month'] = '2017-02-01'
-        context['next_mont'] = '2017-04-01'
-        context['year'] = 2014
 
-        # також поточний місяць;
-        # змінну cur_month ми використовуватимо пізніше
-        # в пагінації; a month_verbose в
-        # навігації помісячній:
-        context['cur_month'] = '2017-03-01'
-        context['month_verbose'] = 'Липень'
+        # calculate current, previous and next month details;
+        # we need this for month navigation element in template
+        next_month = month + relativedelta(months=1)
+        prev_month = month - relativedelta(months=1)
+        context['next_month'] = next_month.strftime('%Y-%m-%d')
+        context['prev_month'] = prev_month.strftime('%Y-%m-%d')
+        context['year'] = month.year
+        context['month_verbose'] = month.strftime('%B')
 
-        #
-        #
-        context['month_header'] = [
-            {'day': 1, 'verbose': 'Пн'},
-            {'day': 2, 'verbose': 'Вт'},
-            {'day': 3, 'verbose': 'Ср'},
-            {'day': 4, 'verbose': 'Чт'},
-            {'day': 5, 'verbose': 'Пт'}
-        ]
+        # we'll use this variable in students pagination
+        context['cur_month'] = month.strftime('%Y-%m-%d')
 
-        # витягуемо усіх студентів посортованих по
+        # prepare variable for template to generate
+        # journal table header elements
+        myear, mmonth = month.year, month.month
+        number_of_days = monthrange(myear, mmonth)[1]
+        context['month_header'] = [{'day': d,
+                                    'verbose': day_abbr[weekday(myear, mmonth, d)][:2]}
+                                    for d in range(1, number_of_days+1)]
+
+        # get all students from database
         queryset = Student.objects.order_by('last_name')
 
-        # це адреса посту AJAX запиту, як бачите, ми
-        # робитимемо його на цю ж в'юшку; в'юшка журналу
-        # буде і показувати журнал і обслуговувати запити
-        # типу пост на оновлення журналу;
+        # url to update student presence, for rorm post
         update_url = reverse('journal')
 
-        # пробігаємося по усіх студентах і збираємо
-        # необхідні дані:
+        # go over all students and collect data about presence
+        # during selected month
         students = []
         for student in queryset:
-            # TODO: витягуємо журнал для студента і
-            #       вибраного місяця
+            # try to get journal object by month selected
+            # month and current student
+            try:
+                journal = MonthJournal.objects.get(student=student, date=month)
+            except Exception:
+                journal = None
 
-            # набиваємо дні для студента
+
+            # fill in days presence list for current student
             days = []
-            for day in range(1,31):
+            for day in range(1, number_of_days+1):
                 days.append({
                     'day': day,
-                    'present': True,
-                    'date': date(2017, 3, day).strftime(
+                    'present': journal and getattr(journal, 'present_day%d' %
+                                                   day, False) or False,
+                    'date': date(myear, mmonth, day).strftime(
                         '%Y-%m-%d'),
                 })
 
-            # набиваем усі решту даних студента
+            # prepare metadata for current student
             students.append({
                 'fullname': '%s %s' % (student.last_name, student.first_name),
                 'days': days,
@@ -77,15 +85,17 @@ class JournalView(TemplateView):
                 'update_url': update_url,
             })
 
-            #import pdb;
-            #pdb.set_trace();
-            # застосовуємо пагінацію по списку студентів
-            # context = paginate(students, 10, self.request, context,
-            #                   var_name='students')
+        context['students'] = students
 
-            # повертаємо оновлений словник із даними
-            context['students'] = students
 
+        # import pdb
+        # pdb.set_trace()
+        # apply pagination, 10 students per page
+        # context = paginate(students, 10, self.request, context,
+        #                   var_name='students')
+
+        # finnally return update context
+        # with paginated students
         return context
 
     def post(self, request, *args, **kwargs):
