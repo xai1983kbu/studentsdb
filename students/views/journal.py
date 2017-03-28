@@ -94,18 +94,3 @@ class JournalView(TemplateView):
         # finnally return update context
         # with paginated students
         return context
-
-    def post(self, request, *args, **kwargs):
-        data = request.POST
-        
-        current_date = datetime.strptime(data['date'], '%Y-%m-%d').date()
-        month = date(current_date.year, current_date.month, 1)
-        student = Student.objects.get(pk=data['student_id'])
-        present = data['present'] == '1' and True or False
-       
-        # get and update journal object
-        journal = MonthJournal.objects.get_or_create(student=student, date=month)[0]
-        setattr(journal, 'present_day%d' % current_date.day, present)
-        journal.save()
-
-        return JsonResponse({'status': 'success'})
