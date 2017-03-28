@@ -29,7 +29,7 @@ In returns updated context object.
 
     # set variables into context
     context[var_name] = object_list
-    context['is_paginate'] = object_list.has_other_pages()
+    context['is_paginated'] = object_list.has_other_pages()
     context['page_obj'] = object_list
     context['paginator'] = paginator
 

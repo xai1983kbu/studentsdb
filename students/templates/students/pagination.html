@@ -1,11 +1,11 @@
 {% if is_paginated %}
 {% with order_by=request.GET.order_by reverse=request.GET.reverse  %}
 <nav>
-    <ul>
+    <ul class="pagination">
         <li>
             <a href="?page=1{% if order_by %}&amp;ordr_by={{ order_by }}{% endif %}
                      {% if reverse %}&amp;reverse={{ reverse }}{% endif %}
-                     {% if cur_month %}&amp;month={{ cur_month }}{% endif %}"&laquo;</a>
+                     {% if cur_month %}&amp;month={{ cur_month }}{% endif %}">&laquo;</a>
         </li>
         {% for p in paginator.page_range %}
         <li {% if object_list.number == p %}class="activate"{% endif %}>
