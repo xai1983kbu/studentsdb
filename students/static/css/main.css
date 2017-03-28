@@ -38,3 +38,16 @@ th.day-header {
   vertical-align: middle !important;
   text-align: center;
 }
+
+/* Student Table Style */
+tr.student-table-header th,
+tr.student-table-row td  {
+  padding: 4px !important;
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+/* Button Додати Студента */
+a.btn {
+  margin-bottom: 4px;
+}

@@ -1,7 +1,7 @@
 {% load static from staticfiles %}
 {% for student in students  %}
 <tr>
-        <td><input type="checkbox" name="delete_list" value="{{student.id}}"></td>
+	<td><input type="checkbox" name="delete_list" value="{{student.id}}"></td>
 	<td>{{ student.id }}</td>
 
 	<td>
@@ -23,7 +23,7 @@
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 				<li><a href="{% url "students_edit" student.id %}">Редагувати</a></li>
-				<li><a href="{% url "journal_student" student.id %}">Відвідування</a></li>
+				<li><a href="">Відвідування</a></li>
 				<li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
 			</ul>
 		</div>

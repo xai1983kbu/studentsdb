@@ -8,10 +8,12 @@ from students.views.students import ManyStudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
 from students.models.groups import Group
 from students.views.journal import JournalView
+from students.views.students import StudentView
+
 
 urlpatterns = [
     # Students urls
-    url(r'^$','students.views.students.students_list', name='home'),
+    url(r'^$', StudentView.as_view(), name='home'),
     url(r'^students/add/?$','students.views.students_add.students_add', name='students_add'),
     url(r'^students/(?P<pk>[0-9]+)/edit/?$',StudentUpdateView.as_view(), name='students_edit'),
     url(r'^students/(?P<pk>[0-9]+)/delete/?$',StudentDeleteView.as_view(), name='students_delete'),

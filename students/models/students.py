@@ -7,7 +7,8 @@ class Student(models.Model):
 
     class Meta(object):
         verbose_name = "Студент"
-        verbose_name_plural = "Студенти" 
+        verbose_name_plural = "Студенти"
+
 
     first_name = models.CharField(
         max_length = 256,
