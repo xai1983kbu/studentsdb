@@ -38,6 +38,9 @@ th.day-header {
   vertical-align: middle !important;
   text-align: center;
 }
+#ajax-progress-indicator {
+  display: none;
+}
 
 /* Student Table Style */
 tr.student-table-header th,
@@ -51,3 +54,4 @@ tr.student-table-row td  {
 a.btn {
   margin-bottom: 4px;
 }
+

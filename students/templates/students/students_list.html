@@ -102,7 +102,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li><a href="{% url "students_edit" student.id %}" class="editForm">Редагувати</a></li>
-                      <li><a href="">Відвідування</a></li>
+                      <li><a href="{% url "journal" student.id %}">Відвідування</a></li>
                       <li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
                     </ul>
                   </div>

@@ -1,11 +1,10 @@
-
-
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from calendar import monthrange, weekday, day_abbr
 
 from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
+from django.http import JsonResponse
 
 from ..models import MonthJournal, Student
 from ..util import paginate
@@ -27,7 +26,6 @@ class JournalView(TemplateView):
             today = datetime.today()
             month = date(today.year, today.month, 1)
 
-
         # calculate current, previous and next month details;
         # we need this for month navigation element in template
         next_month = month + relativedelta(months=1)
@@ -48,8 +46,13 @@ class JournalView(TemplateView):
                                     'verbose': day_abbr[weekday(myear, mmonth, d)][:2]}
                                     for d in range(1, number_of_days+1)]
 
-        # get all students from database
-        queryset = Student.objects.order_by('last_name')
+        # get all students from database, or just one if we need to
+        # display journal for one student
+        if kwargs.get('pk'):
+            queryset = [Student.objects.get(pk=kwargs['pk'])]
+        else:
+            queryset = Student.objects.order_by('last_name')
+
 
         # url to update student presence, for rorm post
         update_url = reverse('journal')
@@ -64,7 +67,6 @@ class JournalView(TemplateView):
                 journal = MonthJournal.objects.get(student=student, date=month)
             except Exception:
                 journal = None
-
 
             # fill in days presence list for current student
             days = []
@@ -85,8 +87,6 @@ class JournalView(TemplateView):
                 'update_url': update_url,
             })
 
-
-
         # apply pagination, 10 students per page
         context = paginate(students, 10, self.request, context,
                            var_name='students')
@@ -94,3 +94,26 @@ class JournalView(TemplateView):
         # finnally return update context
         # with paginated students
         return context
+
+
+    def post(self, request, *args, **kwargs):
+        # import time
+        # time.sleep(3)
+        data = request.POST
+
+        # prepare student, dates and presence data
+        current_data = datetime.strptime(data['date'], '%Y-%m-%d').date()
+        month = date(current_data.year, current_data.month, 1)
+        present = data['present'] and True or False
+        student = Student.objects.get(pk=data['pk'])
+
+        # get or create journal object for given student and month
+        journal = MonthJournal.objects.get_or_create(student=student,
+                                                     date=month)[0]
+
+        # set new presence on journal for given student and save result
+        setattr(journal, 'present_day%d' % current_data.day, present)
+        journal.save()
+
+        # return success status
+        return JsonResponse({'status': 'success'})
