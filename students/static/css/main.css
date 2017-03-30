@@ -7,11 +7,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-#group-select {
+#group-selector {
   margin-top: 30px;
 }
 
-#group-select select {
+#group-selector select {
   height: 30px;
   border-color: #e89895;
   width: 80%

@@ -16,7 +16,7 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
-from ..util import paginate
+from ..util import paginate, get_current_group
 
 
 class StudentUpdateForm(ModelForm):
@@ -139,12 +139,21 @@ class StudentView(TemplateView):
     def get_context_data(self, **kwargs):
         # get context data from TempaleView class
         context = super(StudentView, self).get_context_data(**kwargs)
-        students = Student.objects.all()
 
-        if self.request.GET.get('order_by', '') in ('first_name', 'last_name'):
-            students = students.order_by(self.request.GET.get('order_by', ''))
-        elif self.request.GET.get('order_by', '') in ('ticket'):
-            students = Student.objects.extra(
+        # check if need to show only one group of students
+        current_group = get_current_group(self.request)
+        if current_group:
+            students = Student.objects.filter(student_group=current_group)
+        else:
+            # otherwise show all students
+            students = Student.objects.all()
+
+        # try to order students list
+        order_by = self.request.GET.get('order_by', '')
+        if order_by in ('first_name', 'last_name'):
+            students = students.order_by(order_by)
+        elif order_by in ('ticket'):
+            students = students.extra(
                 select={'ticket': 'CAST(ticket AS SIGNED)'}
                 ).order_by('ticket')
 
