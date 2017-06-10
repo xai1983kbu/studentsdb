@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from studentsdb.settings import ADMIN_EMAIL
 from django.contrib import messages
+import logging
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -60,9 +61,12 @@ def contact_admin(request):
             try:
                 send_mail(subject, message, from_email, [ADMIN_EMAIL])
             except Exception:
-                messages.warning(request, 'Під час відправки листа виникла '  
-                                          'непередбачувана помилка. Спробуйте '
-                                          'скористатись даною формою пізніше.')
+
+                message = 'Під час відправки листа виникла непередбачувана помилка.' \
+                          'Спробуйте скористатись даною формою пізніше.'
+                messages.warning(request, message)
+                logger = logging.getLogger(__name__)
+                logger.exception(message)
             else:
                 messages.warning(request,'Попереднє непотрідне повідомлення')
                 list(messages.get_messages(request))

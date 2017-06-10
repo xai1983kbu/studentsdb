@@ -14,7 +14,7 @@
 
 
 {% block content %}
-        <a href="{% url "students_add" %}" class="btn btn-primary">Додати Групу</a>
+        <a href="{% url "groups_add" %}" class="btn btn-primary">Додати Групу</a>
 
         <!-- Start Groups Listing -->
         {% with order_by=request.GET.order_by  reverse=request.GET.reverse  page=request.GET.page %}
