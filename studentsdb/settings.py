@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 #    }
 #}
 
-from .db import DATABASES
+from .db import DATABASES, GOOGLE_SMTP
 
 
 # Password validation
@@ -151,7 +151,7 @@ ADMIN_EMAIL = 'xai_kbu@ukr.net'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '465'
 EMAIL_HOST_USER = 'xai1983kbu@gmail.com'
-EMAIL_HOST_PASSWORD = 'mariofiore1983'
+EMAIL_HOST_PASSWORD = ''#GOOGLE_SMTP
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 

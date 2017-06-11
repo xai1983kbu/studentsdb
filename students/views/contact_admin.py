@@ -10,6 +10,7 @@ import logging
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from ..signals import contact_admin_signal
 
 
 class ContactForm(forms.Form):
@@ -31,8 +32,6 @@ class ContactForm(forms.Form):
         # form buttons
         self.helper.add_input(Submit('send_button', 'Надіслати'))
 
-
-
     from_email = forms.EmailField(
         label=u"Ваша Емейл Адреса")
 
@@ -43,7 +42,6 @@ class ContactForm(forms.Form):
     message = forms.CharField(
         label=u"Текст повідомлення",
         widget=forms.Textarea)
-
 
 def contact_admin(request):
     # check if form was posted
@@ -60,13 +58,14 @@ def contact_admin(request):
 
             try:
                 send_mail(subject, message, from_email, [ADMIN_EMAIL])
-            except Exception:
-
+                contact_admin_signal.send(sender=ContactForm, subject=subject, message=message, from_email=from_email,\
+                                          admin_email=[ADMIN_EMAIL], excpt=None)
+            except Exception as e:
+                contact_admin_signal.send(sender=ContactForm, subject=subject, message=message, from_email=from_email,\
+                                          admin_email=[ADMIN_EMAIL], excpt=e)
                 message = 'Під час відправки листа виникла непередбачувана помилка.' \
                           'Спробуйте скористатись даною формою пізніше.'
                 messages.warning(request, message)
-                logger = logging.getLogger(__name__)
-                logger.exception(message)
             else:
                 messages.warning(request,'Попереднє непотрідне повідомлення')
                 list(messages.get_messages(request))
