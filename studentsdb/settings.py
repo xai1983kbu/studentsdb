@@ -151,7 +151,7 @@ ADMIN_EMAIL = 'xai_kbu@ukr.net'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '465'
 EMAIL_HOST_USER = 'xai1983kbu@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'mariofiore1983'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
@@ -169,7 +169,13 @@ LOGGING = {
         'skip_fast_sql_query': {
             '()': 'django.utils.log.CallbackFilter',
             'callback': lambda record: record.duration > 0.1
-        }
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
     },
     'formatters': {
         'verbose': {
@@ -189,11 +195,13 @@ LOGGING = {
         },
         'console': {
             'level': 'INFO',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
         'console2': {
             'level': 'DEBUG',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple2'
         },
@@ -202,13 +210,20 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': LOG_FILE,
             'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+             #'email_backend': 'django.core.mail.backends.console.EmailBackend',
+            'include_html': True,
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['null'],
+            'handlers': ['null', 'mail_admins'],
             'propagate': True,
-            'level': 'INFO'
+            'level': 'INFO',
         },
         'students.signals': {
             'handlers': ['console', 'file'],
@@ -226,3 +241,6 @@ LOGGING = {
     }
 }
 
+ADMINS = (
+    ('admin', 'xai_kbu@ukr.net'),
+)
