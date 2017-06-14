@@ -151,7 +151,7 @@ ADMIN_EMAIL = 'xai_kbu@ukr.net'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '465'
 EMAIL_HOST_USER = 'xai1983kbu@gmail.com'
-EMAIL_HOST_PASSWORD = ''#GOOGLE_SMTP
+EMAIL_HOST_PASSWORD = GOOGLE_SMTP
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
@@ -162,6 +162,8 @@ DEFAULT_FROM_EMAIL = 'xai1983kbu@gmail.com'
 MANAGERS = [('my','xai_kbu@ukr.net'), ('my2','xai_kbu@i.ua')]
 
 LOG_FILE = os.path.join(BASE_DIR, 'studentsdb.log')
+LOG_FILE_FOR_COUNT_HTTP_REQUESTS = os.path.join(BASE_DIR, 'count_http_requests.log')
+LOG_FILE_FOR_MIGRATE = os.path.join(BASE_DIR, 'migrate_db.log')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -171,10 +173,10 @@ LOGGING = {
             'callback': lambda record: record.duration > 0.1
         },
         'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
+            '()': 'django.utils.log.RequireDebugTrue'
         },
         'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
+            '()': 'django.utils.log.RequireDebugFalse'
         },
     },
     'formatters': {
@@ -191,7 +193,7 @@ LOGGING = {
     'handlers': {
         'null': {
             'level': 'DEBUG',
-            'class': 'logging.NullHandler',
+            'class': 'logging.NullHandler'
         },
         'console': {
             'level': 'INFO',
@@ -211,19 +213,33 @@ LOGGING = {
             'filename': LOG_FILE,
             'formatter': 'verbose'
         },
+        'file2': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE_FOR_COUNT_HTTP_REQUESTS,
+            'formatter': 'verbose'
+        },
+        'file3': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE_FOR_MIGRATE,
+            'formatter': 'verbose'
+        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler',
              #'email_backend': 'django.core.mail.backends.console.EmailBackend',
-            'include_html': True,
+            'include_html': True
         }
     },
     'loggers': {
         'django': {
             'handlers': ['null', 'mail_admins'],
             'propagate': True,
-            'level': 'INFO',
+            'level': 'INFO'
         },
         'students.signals': {
             'handlers': ['console', 'file'],
@@ -237,10 +253,26 @@ LOGGING = {
             'handlers': ['console2'],
             'level': 'DEBUG',
             'filters': ['skip_fast_sql_query']
+        },
+        'students.signals.count_http_requests': {
+            'handlers': ['file2'],
+            'propagate': False,
+            'level': 'INFO'
+        },
+        'students.signals.migrate_db': {
+            'handlers': ['console2', 'file3'],
+            'propagate': False,
+            'level': 'INFO'
         }
     }
 }
 
+# for mail_admins handler
 ADMINS = (
     ('admin', 'xai_kbu@ukr.net'),
 )
+
+# for Redis database
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1

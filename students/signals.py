@@ -1,10 +1,14 @@
 import logging
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, post_migrate
+from django.core.signals import request_started
 from django.dispatch import receiver
 from django.utils.termcolors import colorize, parse_color_setting, make_style
+from django.dispatch import Signal
+
+from datetime import date
 
 from .models import Student, Group, Exam
-from django.dispatch import Signal
+from .apps import StudentsConfig
 
 
 # setting styles for logging messages
@@ -60,6 +64,7 @@ def log_student_group_update_added_event(signal, sender, **kwargs):
 
     logger.info(msg)
 
+
 contact_admin_signal = Signal(providing_args=["subject", "message", "from_email", "admin_email", "excpt"])
 
 @receiver(contact_admin_signal)
@@ -70,3 +75,49 @@ def log_contact_admin(**kwargs):
                      % (kwargs['sender'], kwargs['subject'], kwargs['message'], kwargs['from_email'], \
                         kwargs['admin_email'], kwargs['excpt']))
     logger.info(msg)
+
+
+# conection to Redis
+import redis
+from django.conf import settings
+# connect to redis
+r = redis.StrictRedis(host=settings.REDIS_HOST,
+                      port=settings.REDIS_PORT,
+                      db=settings.REDIS_DB)
+
+@receiver(request_started)
+def count_http_requests(**kwargs):
+    """Counts http requests and saves it to Redis database"""
+    logger = logging.getLogger('students.signals.count_http_requests')
+
+    # today's day
+    day = date.today().strftime("%Y-%m-%d")
+
+    path = kwargs['environ']['PATH_INFO']
+    # incremenents not media and not static requests
+    if not 'media' in path and not 'static' in path:
+        not_media_requests_per_day = r.incr('requests:{0}:not_media'.format(day))
+    # incremenents all requests
+    total_requests_per_day = r.incr('requests:{0}:total'.format(day))
+
+    try:
+        # logging to file 'count_http_requests.log' every 100-th requests
+        if total_requests_per_day % 100 == 0:
+            logger.info("dates:"+date.today().strftime("%Y-%m-%d")+ \
+                        ' Number_of_requests: '+str(total_requests_per_day))
+
+        # logging to file 'count_http_requests.log' every 10-th 'not media and not static' requests
+        if not_media_requests_per_day % 10 == 0:
+            logger.info("dates:"+date.today().strftime("%Y-%m-%d")+ \
+                        ' Number_of_not_media_requests: '+str(not_media_requests_per_day))
+    except UnboundLocalError:
+        pass
+
+
+@receiver(post_migrate)
+def introspaction_of_migrate(**kwargs):
+    """Logging all changes of database"""
+    logger = logging.getLogger('students.signals.migrate_db')
+    #import pdb; pdb.set_trace()
+    msg = kwargs['app_config']
+    logger.info(kwargs)

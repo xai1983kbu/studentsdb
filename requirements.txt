@@ -4,3 +4,4 @@ mysqlclient
 python-dateutil
 django-crispy-forms==1.6.0
 django-contact-form
+redis==2.10.5
